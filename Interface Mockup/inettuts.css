@@ -1,0 +1,198 @@
+/* Font Face for Facebook from mediafont.com*/
+/* credit to Bogdan Balatchi */
+@font-face { 
+    font-family: Facebook Letter Faces; 
+    src: url('http://www.mediafont.com/storage/contents/11/font.eot'); 
+    /* IE */ 
+    src: local('Facebook Letter Faces'), 
+        url('http://www.mediafont.com/storage/contents/11/FACEBOLF.OTF'); 
+    /* non-IE */ 
+}
+
+
+/* Reset */
+body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none;}
+/* End Reset */
+
+body {font-size:0.8em; font-family:Facebook Letter Faces; color: #3B5998; }
+a {color: #3B5998;}
+
+/* Colors */
+.color-yellow {background:#f2bc00;}
+.color-red    {background:#dd0000;}
+.color-blue   {background:#3B5998;}
+.color-white  {background:#dfdfdf;}
+.color-orange {background:#f66e00;}
+.color-green  {background:#8dc100;}
+.color-yellow h3,
+.color-white h3,
+.color-green h3
+	{color:#000;}
+.color-red h3,
+.color-blue h3,
+.color-orange h3
+	{color:#FFF;}
+/* End Colors */
+
+/* Head section */
+#head {
+    height: 30px;
+    width: 100%;
+    background: #3B5998;
+    position: fixed;
+}
+#head h1 {
+    color: white;
+    text-align: left;
+    font-family: Facebook Letter Faces;
+    vertical-align: center;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+/* End Head Section */
+
+/* Columns section */
+#columns .column {
+    float: left;
+    width: 33.3%;
+		/* Min-height: */
+		min-height: 400px;
+		height: auto !important; 
+		height: 400px;
+    margin-top: 40px;
+}
+
+/* Column dividers (background-images) : */
+	
+#columns #column1 .widget { margin: 30px 35px 0 25px; }
+#columns #column3 .widget { margin: 30px 25px 0 35px; }
+#columns .widget {
+    margin: 30px 20px 0 20px;
+    padding: 2px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+#columns .widget .widget-head {
+    color: #000;
+    overflow: hidden;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+#columns .widget .widget-head h3 {
+    padding: 0 5px;
+    float: left;
+}
+#columns .widget .widget-content {
+    background: white;
+    /* background: #333 url(img/widget-content-bg.png) repeat-x; */
+    padding: 0 5px;
+    color: black;
+    font-family: 'Helvetica Neue';
+    -moz-border-radius-bottomleft: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    line-height: 1.2em;
+    overflow: hidden;
+}
+#columns .widget .widget-content p {
+    padding: 0.8em 0;
+    border-bottom: 1px solid #666;
+}
+#columns .widget .widget-content img {
+    float: right;
+    margin: 10px;
+    border: 1px solid #FFF;
+}
+#columns .widget .widget-content pre {
+    padding: 0.5em 5px;
+    color: #EEE;
+    font-size: 12px;
+}
+#columns .widget .widget-content ul {
+    padding: 5px 0 5px 20px;
+    list-style: disc;
+}
+#columns .widget .widget-content ul li {padding: 3px 0;}
+#columns .widget .widget-content ul.images {
+    padding: 7px 0 0 0;
+    list-style: none;
+    height: 1%;
+}
+#columns .widget .widget-content ul.images li {
+    display: inline;
+    float: left;
+}
+#columns .widget .widget-content ul.images img {
+    display: inline;
+    float: left;
+    margin: 0 0 7px 7px;
+}
+/* End Columns section */
+
+/* fbactions widget */
+#fbactions {
+    background: white;
+}
+
+#fbactions li{
+    list-style: none;
+}
+
+#fbactions a {
+    text-decoration: none;
+}
+
+#fbactions a:hover {
+    color: black;
+}
+
+/* post widget */
+#stocks {
+    height: 250px;
+    background-size: 100%;
+}
+#stocks li {
+    list-style: none;
+}
+
+#stocks ul li pre {
+    color: black;
+    margin-top: 0px;
+}
+
+/* news feed */
+#newsfeed img{
+    position: right;
+}
+
+.text{
+    width: 70%;
+    margin-right: 5px;
+}
+
+.enter {
+    width: 20%;
+    margin-left: 5px;
+}
+
+/* events */
+#events {
+    text-align: center;
+    height: 100px;
+    vertical-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
