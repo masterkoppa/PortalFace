@@ -3,7 +3,7 @@
  * @requires jQuery($), jQuery UI & sortable/draggable UI modules
  */
 
-var iNettuts = {
+var widget_functionality = {
     
     jQuery : $,
     
@@ -14,23 +14,15 @@ var iNettuts = {
         contentSelector: '.widget-content',
         widgetDefault : {
             movable: true,
-            removable: true,
+            removable: false,
             collapsible: true,
             editable: true,
             colorClasses : ['color-yellow', 'color-red', 'color-blue', 'color-white', 'color-orange', 'color-green']
         },
-        widgetIndividual : {
-            intro : {
-                movable: false,
-                removable: false,
-                collapsible: false,
-                editable: false
-            }
-        }
     },
 
     init : function () {
-        this.attachStylesheet('inettuts.js.css');
+        this.attachStylesheet('css/widget_style.js.css');
         this.addWidgetControls();
         this.makeSortable();
     },
@@ -42,12 +34,12 @@ var iNettuts = {
     },
     
     addWidgetControls : function () {
-        var iNettuts = this,
+        var widget_functionality = this,
             $ = this.jQuery,
             settings = this.settings;
             
         $(settings.widgetSelector, $(settings.columns)).each(function () {
-            var thisWidgetSettings = iNettuts.getWidgetSettings(this.id);
+            var thisWidgetSettings = widget_functionality.getWidgetSettings(this.id);
             if (thisWidgetSettings.removable) {
                 $('<a href="#" class="remove">CLOSE</a>').mousedown(function (e) {
                     e.stopPropagation();    
@@ -135,13 +127,13 @@ var iNettuts = {
     },
     
     makeSortable : function () {
-        var iNettuts = this,
+        var widget_functionality = this,
             $ = this.jQuery,
             settings = this.settings,
             $sortableItems = (function () {
                 var notSortable = '';
                 $(settings.widgetSelector,$(settings.columns)).each(function (i) {
-                    if (!iNettuts.getWidgetSettings(this.id).movable) {
+                    if (!widget_functionality.getWidgetSettings(this.id).movable) {
                         if(!this.id) {
                             this.id = 'widget-no-id-' + i;
                         }
@@ -188,4 +180,4 @@ var iNettuts = {
   
 };
 
-iNettuts.init();
+widget_functionality.init();
