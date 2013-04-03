@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>PortalFace1</title>
+        <title>PortalFace</title>
         @Styles.Render("~/Content/PortalFace/style.css")
         @Styles.Render("~/Content/PortalFace/fb.css")
 </head>
@@ -105,8 +105,7 @@ You : Mommy told me not to tell strangers, bye.
     
     
     <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
-    <script type="text/javascript" src="jquery-ui-personalized-1.6rc2.min.js"></script>
-    <script type="text/javascript" src="widget_functionality.js"></script>
+    @Scripts.Render("~/Scripts/jquery-ui-personalized-1.6rc2.min.js", "~/Scripts/widget_functionality.js")
 
 </body>
 </html>

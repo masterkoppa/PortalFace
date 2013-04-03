@@ -46,3 +46,4 @@ C:\Users\Andres\Documents\GitHub\PortalFace\MvcApplication1\MvcApplication1\bin\
 C:\Users\Andres\Documents\GitHub\PortalFace\MvcApplication1\MvcApplication1\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\Andres\Documents\GitHub\PortalFace\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.dll
 C:\Users\Andres\Documents\GitHub\PortalFace\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.pdb
+C:\Users\Andres\Documents\GitHub\PortalFace\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
