@@ -18,10 +18,19 @@ namespace MvcApplication1.Controllers
             if (Session["AccessToken"] != null)
             {
                 var accessToken = Session["AccessToken"].ToString();
-                var client = new FacebookClient(accessToken);
-                dynamic result = client.Get("me", new { fields = "name,id" });
-                string name = result.name;
-                ViewBag.Name = name;
+                try
+                {
+                    var client = new FacebookClient(accessToken);
+                    dynamic result = client.Get("me", new { fields = "name,id" });
+                    string name = result.name;
+                    ViewBag.Name = name;
+                }
+                catch (FacebookOAuthException)
+                {
+                    Response.Redirect("/");
+                    return null;
+                }
+                
             }
             else
             {

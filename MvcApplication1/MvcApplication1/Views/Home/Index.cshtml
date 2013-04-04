@@ -4,6 +4,10 @@
 }
 
 @section body {
+
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
     
     <div id="fb-root"></div>
     <script>
@@ -60,7 +64,31 @@
         }(document));
     </script>
     <div id="landing">
+        <h1>Welcome to FacePortal</h1>
+        <p>To procede please log in using Facebook bellow</p>
+        <br />
+        <br />
         <div class="fb-login-button" data-show-faces="true" data-width="400" data-max-rows="1"></div>
     </div>
+    
+    <script>
+        $("#landing").dialog({ autoOpen: true, width: 500 });
+    </script>
+
+    <!--
+    <div id="dialog"></div>
+    <script>
+        $("#dialog").dialog({
+            dialogClass: "no-close",
+            buttons: [
+            {
+                text: "OK",
+                click: function () {
+                    $(this).dialog("close");
+                }
+            }
+            ]
+        });
+    </script> -->
   
 }
