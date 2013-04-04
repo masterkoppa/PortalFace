@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Facebook;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,12 @@ namespace MvcApplication1.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            //Start FB Connection
+            var client = new FacebookClient();
+            dynamic me = client.Get("totten");
+            
+
+            ViewBag.Message = me.first_name;
 
             return View();
         }
@@ -32,6 +38,16 @@ namespace MvcApplication1.Controllers
         public ActionResult Chat()
         {
             return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public void Login()
+        {
+            var accessToken = Request.Form["accessToken"];
+            Session["AccessToken"] = accessToken;
+
+            Response.Redirect("/");
         }
     }
 }
