@@ -7,11 +7,64 @@
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>PortalFace</title>
-        
-        <link rel="stylesheet" href="css/style.css" type="text/css" />
-        <link rel="stylesheet" href="css/fbfont.css">
+        @Styles.Render("~/Content/PortalFace/style.css")
+        @Styles.Render("~/Content/PortalFace/fbfont.css")
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '393153644124938', // App ID
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                xfbml: true  // parse XFBML
+            });
+
+            // Additional initialization code here
+            FB.Event.subscribe('auth.authResponseChange', function (response) {
+                if (response.status === 'connected') {
+                    // the user is logged in and has authenticated your
+                    // app, and response.authResponse supplies
+                    // the user's ID, a valid access token, a signed
+                    // request, and the time the access token 
+                    // and signed request each expire
+                    var uid = response.authResponse.userID;
+                    var accessToken = response.authResponse.accessToken;
+
+                    // Do a post to the server to finish the logon
+                    // This is a form post since we don't want to use AJAX
+                    var form = document.createElement("form");
+                    form.setAttribute("method", 'post');
+                    form.setAttribute("action", '/Home/Login');
+
+                    var field = document.createElement("input");
+                    field.setAttribute("type", "hidden");
+                    field.setAttribute("name", 'accessToken');
+                    field.setAttribute("value", accessToken);
+                    form.appendChild(field);
+
+                    document.body.appendChild(form);
+                    form.submit();
+
+                } else if (response.status === 'not_authorized') {
+                    // the user is logged in to Facebook, 
+                    // but has not authenticated your app
+                } else {
+                    // the user isn't logged in to Facebook.
+                }
+            });
+        };
+
+        // Load the SDK Asynchronously
+        (function (d) {
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+    </script>
     
     <div id="head">
         <h1>PortalFace</h1>
@@ -26,6 +79,7 @@
                 </div>
                 <div class="widget-content">
                     <ul id="fbactions">
+                        <div class="fb-login-button" data-show-faces="true" data-width="400" data-max-rows="1"></div>
                         <li><a href="#">Message Friends</a></li>
                         <li><a href="#">Search Friends</a></li>
                         <li><a href="#">Add Friends</a></li>
@@ -38,7 +92,7 @@
                     <h3>News Feed</h3>
                 </div>
                 <div id="newsfeed" class="widget-content">
-                    <img src="img/newsfeed.jpg"
+                    <img src="/Content/PortalFace/img/newsfeed.jpg"
                 </div>
             </li>
             
@@ -84,19 +138,8 @@
                 <div class="widget-head">
                     <h3>Global Chat</h3>
                 </div>
-                <div class="widget-content">
-                    <pre>
-                    <font color=black>
-Anon1387 : Hello?
-You : Hi
-Anon1387 : Where do you live?
-You : Mommy told me not to tell strangers, bye.
-                    </font>
-
-                    </pre>
-                    <form>
-                        <input class="text" type="text"><input class="enter" type="submit" value="Send">
-                    </form>
+                <div class="widget-content" id="chat">
+                    <!-- Check out the LoadMainContent.js Script -->
                 </div>
             </li>
             
@@ -106,8 +149,7 @@ You : Mommy told me not to tell strangers, bye.
     
     
     <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
-    <script type="text/javascript" src="jquery-ui-personalized-1.6rc2.min.js"></script>
-    <script type="text/javascript" src="widget_functionality.js"></script>
+    @Scripts.Render("~/Scripts/jquery-ui-personalized-1.6rc2.min.js", "~/Scripts/widget_functionality.js", "~/Scripts/LoadMainContent.js")
 
 </body>
 </html>
