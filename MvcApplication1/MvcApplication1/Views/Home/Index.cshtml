@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>PortalFace</title>
         @Styles.Render("~/Content/PortalFace/style.css")
-        @Styles.Render("~/Content/PortalFace/fb.css")
+        @Styles.Render("~/Content/PortalFace/fbfont.css")
 </head>
 <body>
     
@@ -37,7 +37,7 @@
                     <h3>News Feed</h3>
                 </div>
                 <div id="newsfeed" class="widget-content">
-                    <img src="img/newsfeed.jpg"
+                    <img src="/Content/PortalFace/img/newsfeed.jpg"
                 </div>
             </li>
             
@@ -83,19 +83,8 @@
                 <div class="widget-head">
                     <h3>Global Chat</h3>
                 </div>
-                <div class="widget-content">
-                    <pre>
-                    <font color=black>
-Anon1387 : Hello?
-You : Hi
-Anon1387 : Where do you live?
-You : Mommy told me not to tell strangers, bye.
-                    </font>
-
-                    </pre>
-                    <form>
-                        <input class="text" type="text"><input class="enter" type="submit" value="Send">
-                    </form>
+                <div class="widget-content" id="chat">
+ 
                 </div>
             </li>
             
@@ -105,7 +94,7 @@ You : Mommy told me not to tell strangers, bye.
     
     
     <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
-    @Scripts.Render("~/Scripts/jquery-ui-personalized-1.6rc2.min.js", "~/Scripts/widget_functionality.js")
+    @Scripts.Render("~/Scripts/jquery-ui-personalized-1.6rc2.min.js", "~/Scripts/widget_functionality.js", "~/Scripts/LoadMainContent.js")
 
 </body>
 </html>

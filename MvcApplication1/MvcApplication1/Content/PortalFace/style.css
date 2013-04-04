@@ -9,21 +9,30 @@
     /* non-IE */ 
 }
 
+@font-face {
+  font-family: "FontAwesome";
+  src: url('/assets/fontawesome-webfont.eot');
+  src: url('/assets/fontawesome-webfont.eot?#iefix') format('eot'), url('/assets/fontawesome-webfont.woff') format('woff'), url('/assets/fontawesome-webfont.ttf') format('truetype'), url('/assets/fontawesome-webfont.svg#FontAwesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /* Reset */
 body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none;}
 /* End Reset */
 
-body {font-size:0.8em; font-family:Facebook Letter Faces; color: #3B5998; }
+body {font-size:0.8em; font-family:Facebook Letter Faces; color: #3B5998; background: rgb(39,39,39); }
 a {color: #3B5998;}
 
 /* Colors */
 .color-yellow {background:#f2bc00;}
-.color-red    {background:#dd0000;}
-.color-blue   {background:#3B5998;}
+.color-red    {background:#dc5945;}
+.color-blue   {background:#12b0c5;}
 .color-white  {background:#dfdfdf;}
-.color-orange {background:#f66e00;}
+.color-orange {background:#ff9618;}
 .color-green  {background:#8dc100;}
+.color-purple {background:#9c4274;}
 .color-yellow h3,
 .color-white h3,
 .color-green h3
@@ -56,21 +65,22 @@ a {color: #3B5998;}
     float: left;
     width: 33.3%;
 		/* Min-height: */
-		min-height: 400px;
+		min-height: 650px;
 		height: auto !important; 
-		height: 400px;
+		height: 1000px;
     margin-top: 40px;
+    background: rgb(39,39,39);
 }
 
 /* Column dividers (background-images) : */
 	
-#columns #column1 .widget { margin: 30px 35px 0 25px; }
-#columns #column3 .widget { margin: 30px 25px 0 35px; }
+#columns #column1 .widget { margin: 10px 10px 0 10px; }
+#columns #column3 .widget { margin: 10px 10px 0 10px; }
 #columns .widget {
-    margin: 30px 20px 0 20px;
+    margin: 10px 10px 0 10px;
     padding: 2px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
+    /*-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;*/
 }
 #columns .widget .widget-head {
     color: #000;
@@ -84,15 +94,15 @@ a {color: #3B5998;}
     float: left;
 }
 #columns .widget .widget-content {
-    background: white;
-    /* background: #333 url(img/widget-content-bg.png) repeat-x; */
+    /*background: white;
+    background: #333 url(img/widget-content-bg.png) repeat-x; */
     padding: 0 5px;
     color: black;
     font-family: 'Helvetica Neue';
-    -moz-border-radius-bottomleft: 2px;
+    /*-moz-border-radius-bottomleft: 2px;
     -moz-border-radius-bottomright: 2px;
     -webkit-border-bottom-left-radius: 2px;
-    -webkit-border-bottom-right-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;*/
     line-height: 1.2em;
     overflow: hidden;
 }
@@ -132,9 +142,6 @@ a {color: #3B5998;}
 /* End Columns section */
 
 /* fbactions widget */
-#fbactions {
-    background: white;
-}
 
 #fbactions li{
     list-style: none;
@@ -142,6 +149,7 @@ a {color: #3B5998;}
 
 #fbactions a {
     text-decoration: none;
+    color: white;
 }
 
 #fbactions a:hover {
@@ -183,8 +191,6 @@ a {color: #3B5998;}
     height: 100px;
     vertical-align: center;
 }
-
-
 
 
 
