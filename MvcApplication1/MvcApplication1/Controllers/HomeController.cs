@@ -10,9 +10,16 @@ namespace MvcApplication1.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {   
-
-            return View();
+        {
+            if (Session["AccessToken"] != null)
+            {
+                Response.Redirect("/PortalFace");
+                return null;
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult About()
