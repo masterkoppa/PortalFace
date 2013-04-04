@@ -10,13 +10,7 @@ namespace MvcApplication1.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
-            //Start FB Connection
-            var client = new FacebookClient();
-            dynamic me = client.Get("totten");
-            
-
-            ViewBag.Message = me.first_name;
+        {   
 
             return View();
         }
@@ -47,7 +41,7 @@ namespace MvcApplication1.Controllers
             var accessToken = Request.Form["accessToken"];
             Session["AccessToken"] = accessToken;
 
-            Response.Redirect("/");
+            Response.Redirect("/PortalFace");
         }
     }
 }
