@@ -5,7 +5,7 @@
 
 @section body {
 
-     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
     
@@ -63,8 +63,9 @@
             ref.parentNode.insertBefore(js, ref);
         }(document));
     </script>
+
     <div id="landing">
-        <h1>Welcome to FacePortal</h1>
+        <h1>Welcome to PortalFace</h1>
         <p>To procede please log in using Facebook bellow</p>
         <br />
         <br />
@@ -77,21 +78,5 @@
             $("#landing").dialog("option", "position", "center");
         });
     </script>
-
-    <!--
-    <div id="dialog"></div>
-    <script>
-        $("#dialog").dialog({
-            dialogClass: "no-close",
-            buttons: [
-            {
-                text: "OK",
-                click: function () {
-                    $(this).dialog("close");
-                }
-            }
-            ]
-        });
-    </script> -->
   
 }

@@ -28,8 +28,10 @@ namespace MvcApplication1.Controllers
                 catch (FacebookOAuthException)
                 {
                     Response.Redirect("/");
+                    Session["AccessToken"] = null;
                     return null;
                 }
+                ViewBag.AccessToken = Session["AccessToken"];
                 
             }
             else
@@ -38,6 +40,14 @@ namespace MvcApplication1.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public ActionResult AddFriend(int id)
+        {
+            return View();
+        }
+
+
 
         //
         // GET: /PortalFace/Details/5
