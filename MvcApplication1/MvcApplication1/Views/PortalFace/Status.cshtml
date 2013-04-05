@@ -1,24 +1,24 @@
 ﻿@{
     Layout = null;
-    ViewBag.Title = "Status";
 }
 
-<form>
-    <input class="status" id="status" type="text" name="status"><i class="icon-camera"></i><button class="postStatus" id="postStatus">Submit</button>
-</form>
+<input id="statusMessage" type="text" name="status"><i class="icon-camera"></i><button class="postStatus" id="postStatus">Submit</button>
 
-<script>
-    $("#postStatus").click(function () {
-        var postUrl = "/PortalFace/PostStatus";
 
-        $.ajax({
-            type: "POST",
-            url: postUrl,
-            data: $("#status"),
-            success: function (data) {
-                alert(data);
-            }
-        });
-        return false;
-    });
-</script>
+
+                    <script>
+                        $("#postStatus").click(function () {
+                            var statusMessage = $("#statusMessage").val();
+                            console.log(statusMessage);
+                            FB.api(
+                                '/me/feed',
+                                'post',
+                                { message: statusMessage },
+                                function (response) {
+                                    alert(JSON.stringify(response));
+                                }
+                                );
+                            console.log("Test");
+                            return false;
+                        });
+                    </script>

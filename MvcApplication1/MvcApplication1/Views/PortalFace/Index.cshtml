@@ -46,6 +46,10 @@
             FB.ui({ method: 'friends.add', id: ID });
         }
     </script>
+    <!-- Look into using a more recent jQuery -->
+    <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
+    @Scripts.Render("~/Scripts/jquery-ui-personalized-1.6rc2.min.js", "~/Scripts/widget_functionality.js", "~/Scripts/LoadMainContent.js")
+
     <div id="columns">
         
         <ul id="column1" class="column">
@@ -79,8 +83,10 @@
                 <div class="widget-head">
                     <h3>Post to Facebook</h3>
                 </div>
+                
                 <div class="widget-content" id="status">
-                    <!-- Check out the LoadMainContent.js Script -->
+
+                        
                 </div>
             </li>
             <li class="widget color-orange">  
@@ -126,8 +132,6 @@
     </div>
     
     
-    <!-- Look into using a more recent jQuery -->
-    <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
-    @Scripts.Render("~/Scripts/jquery-ui-personalized-1.6rc2.min.js", "~/Scripts/widget_functionality.js", "~/Scripts/LoadMainContent.js")
+    
 
 }

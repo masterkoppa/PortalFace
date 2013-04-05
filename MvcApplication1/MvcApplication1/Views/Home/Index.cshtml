@@ -69,7 +69,17 @@
         <p>To procede please log in using Facebook bellow</p>
         <br />
         <br />
-        <div class="fb-login-button" data-show-faces="true" data-width="400" data-max-rows="1"></div>
+        <button class="btn" id="fb-permissions">Log in with Facebook</button>
+        <script>
+            document.getElementById('fb-permissions').onclick = function () {
+                FB.login(
+                    function(response) {
+                        console.log(response)
+                    },
+                    {scope: 'publish_stream'}
+                );
+            };
+        </script>
     </div>
     
     <script>
