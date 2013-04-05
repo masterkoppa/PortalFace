@@ -15,10 +15,10 @@
                                 'post',
                                 { message: statusMessage },
                                 function (response) {
-                                    alert(JSON.stringify(response));
+                                    //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
                                 }
                                 );
-                            console.log("Test");
+                            $("#statusMessage").val('');
                             return false;
                         });
                     </script>
