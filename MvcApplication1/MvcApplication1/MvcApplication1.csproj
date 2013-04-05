@@ -285,6 +285,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Chat.cshtml" />
+    <Content Include="Views\Home\StockPage.cshtml" />
+    <Content Include="Views\Home\CalendarPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

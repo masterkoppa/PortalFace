@@ -41,6 +41,16 @@ namespace MvcApplication1.Controllers
             return View();
         }
 
+        public ActionResult StockPage()
+        {
+            return View();
+        }
+
+        public ActionResult CalendarPage()
+        {
+            return View();
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public void Login()
