@@ -73,7 +73,7 @@
     </div>
     
     <script>
-        $("#landing").dialog({ autoOpen: true, width: 500 });
+        $("#landing").dialog({ autoOpen: true, width: 500, resizable: false });
         $(window).resize(function () {
             $("#landing").dialog("option", "position", "center");
         });
