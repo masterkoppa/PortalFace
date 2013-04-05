@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Status";
+}
+
+<form>
+    <input class="status" id="status" type="text" name="status"><i class="icon-camera"></i><button class="postStatus" id="postStatus">Submit</button>
+</form>
+
+<script>
+    $("#postStatus").click(function () {
+        var postUrl = "/PortalFace/PostStatus";
+
+        $.ajax({
+            type: "POST",
+            url: postUrl,
+            data: $("#status"),
+            success: function (data) {
+                alert(data);
+            }
+        });
+        return false;
+    });
+</script>

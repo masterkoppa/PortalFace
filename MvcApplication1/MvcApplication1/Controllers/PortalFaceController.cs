@@ -36,8 +36,15 @@ namespace MvcApplication1.Controllers
             }
             else
             {
-                ViewBag.Name = "INVALID USER!";
+                Response.Redirect("/");
+                Session["AccessToken"] = null;
+                return null;
             }
+            return View();
+        }
+
+        public ActionResult Status()
+        {
             return View();
         }
 
@@ -45,6 +52,36 @@ namespace MvcApplication1.Controllers
         public ActionResult AddFriend(int id)
         {
             return View();
+        }
+
+        [HttpPost]
+        public void PostStatus(String status)
+        {
+            System.Diagnostics.Debug.WriteLine("Request Recieved");
+            //Start FB Connection
+            if (Session["AccessToken"] != null)
+            {
+                var accessToken = Session["AccessToken"].ToString();
+                try
+                {
+                    var client = new FacebookClient(accessToken);
+                    dynamic result = client.Post("/me/feed", new { message = "Hello There!" });
+                    System.Diagnostics.Debug.WriteLine("Post Sent");
+                }
+                catch (FacebookOAuthException)
+                {
+                    Session["AccessToken"] = null;
+                    Response.Redirect("/");
+                }
+                ViewBag.AccessToken = Session["AccessToken"];
+
+            }
+            else
+            {
+                Session["AccessToken"] = null;
+                Response.Redirect("/");
+            }
+            
         }
 
 
