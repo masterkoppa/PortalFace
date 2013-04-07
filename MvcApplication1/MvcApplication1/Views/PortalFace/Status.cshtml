@@ -6,19 +6,19 @@
 
 
 
-                    <script>
-                        $("#postStatus").click(function () {
-                            var statusMessage = $("#statusMessage").val();
-                            console.log(statusMessage);
-                            FB.api(
-                                '/me/feed',
-                                'post',
-                                { message: statusMessage },
-                                function (response) {
-                                    //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
-                                }
-                                );
-                            $("#statusMessage").val('');
-                            return false;
-                        });
-                    </script>
+<script>
+    $("#postStatus").click(function () {
+        var statusMessage = $("#statusMessage").val();
+        console.log(statusMessage);
+        FB.api(
+            '/me/feed',
+            'post',
+            { message: statusMessage },
+            function (response) {
+                //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
+            }
+            );
+        $("#statusMessage").val('');
+        return false;
+    });
+</script>
