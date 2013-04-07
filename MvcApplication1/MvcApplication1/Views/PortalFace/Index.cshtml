@@ -42,14 +42,28 @@
             });
         };
 
-        function addFriend(ID) {
-            FB.ui({ method: 'friends.add', id: ID });
+        function findAndAddFriend(userName) {
+            FB.api({
+                method: 'fql.query',
+                query: 'SELECT uid FROM user WHERE username=' + userName,
+            });
+            addFriend(uid);
+        }
+        function addFriend( uid ) {
+            
+            FB.ui({
+                method: 'friends.add',
+                id: uid,
+            }, function (response) {
+
+            });
         }
     </script>
     <!-- Look into using a more recent jQuery -->
     <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
     @Scripts.Render("~/Scripts/jquery-ui-personalized-1.6rc2.min.js", "~/Scripts/widget_functionality.js", "~/Scripts/LoadMainContent.js")
 
+    
     <div id="columns">
         
         <ul id="column1" class="column">
@@ -62,7 +76,7 @@
                         <h3>Welcome back @ViewBag.Name</h3>
                         <li><a href="#">Message Friends</a></li>
                         <li><a href="#">Search Friends</a></li>
-                        <li><a href="#" onclick="addFriend('662071635')">Add Friends</a></li>
+                        <li><a href="#" onclick="addFriend( 'andresruiztorres' )">Add Friends</a></li>
                         <li><a href="#">Add Photos</a></li>
                     </ul>
                 </div>

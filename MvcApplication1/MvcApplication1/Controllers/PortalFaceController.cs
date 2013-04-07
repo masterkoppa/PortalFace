@@ -49,9 +49,9 @@ namespace MvcApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddFriend(int id)
+        public void AddFriend(int id)
         {
-            return View();
+           
         }
 
         [HttpPost]
@@ -81,7 +81,6 @@ namespace MvcApplication1.Controllers
                 Session["AccessToken"] = null;
                 Response.Redirect("/");
             }
-            
         }
 
 
