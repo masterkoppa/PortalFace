@@ -140,15 +140,16 @@
                 </div>
                 <!--<a href = "/Home/StockPage" class="widget-content-link"> -->
                     <div id="stocks">
-                        <input id="ticker" type="text" value="Stock Symbol" /><button onclick="searchStock()">Search</button>
+                        <input id="ticker" name="ticker" type="text" value="Stock Symbol" /><button onclick="searchStock()">Search</button>
                         <div id="searchResults"></div>
                         <script>
                             function searchStock() {
-                                var ticker = $("ticker").val();
-
-                                $.get("/PortalFace/StockInfo", { stockSymbol: "GOOG"})
+                                var ticker = $("#ticker").val();
+                                console.log(ticker);
+                                $.get("/PortalFace/StockInfo", { stockSymbol: ticker})
                                     .done(function (data) {
                                         $("#searchResults").html(data);
+                                        $("#ticker").val("");
                                     });
                             }
                         </script>

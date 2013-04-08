@@ -94,9 +94,17 @@ namespace MvcApplication1.Controllers
 
             String response = t.DownloadString(url);
 
+            if(response.Contains("Missing Symbols List"))
+            {
+                //@ViewBag.symbol = "Symbol Not Found";
+
+                //@ViewBag.name = "ERROR";
+
+                return View();
+            }
+
+
             String[] respsonseArray = response.Split(',');
-
-
 
             @ViewBag.symbol = stockSymbol;
 
