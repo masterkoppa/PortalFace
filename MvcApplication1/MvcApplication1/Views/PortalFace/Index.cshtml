@@ -69,11 +69,32 @@
                 //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
         }
-        function addFriend( uid ) {
-            
+        function addPhoto() {
+            var uid = FB.getUserID()
+            //var imgURL = "http://farm4.staticflickr.com/3332/3451193407_b7f047f4b4_o.jpg";//change with your external photo url
+
+            var imgURL = $("#photoURL").val();
+
+            console.log(imgURL);
+            FB.api('/'+uid+'/photos', 'post', {
+                message: 'photo description',
+                url: imgURL
+            }, function (response) {
+
+                if (!response || response.error) {
+                    alert('Error occured');
+                } else {
+                    //alert('Post ID: ' + response.id);
+                    $("#photoURL").val("");
+                }
+
+            });
+        }
+        function addFriend() {
+            var uid = $("#friendUsername").val();
             FB.ui({
                 method: 'friends.add',
-                id: uid,
+                id: uid
             }, function (response) {
                 //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
@@ -103,16 +124,16 @@
                         <h4>Message Friends</h4>
                         <div><button onclick="messageFriend()">Open Message Dialog</button></div>
                         <h4>Add Friends</h4>
-                        <div><a onclick="addFriend( 'andresruiztorres' )"></a></div>
+                        <div><input type="text" id="friendUsername" /><button onclick="addFriend()">Add Friend</button></div>
                         <h4>Add Photo</h4>
-                        <div><a href="#">Add Photos</a></div>
+                        <div><input type="text" id="photoURL" /><button onclick="addPhoto()">Add Photos</button></div>
                     </div>
                     <script>
                         $("#fbactions").accordion();
                     </script>
                 </div>
             </li>
-            <li class="widget color-yellow">  
+            <li class="widget color-yellow">
                 <div class="widget-head">
                     <h3>News Feed</h3>
                 </div>
