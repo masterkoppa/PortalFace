@@ -33,6 +33,8 @@
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
 
+                    console.log(accessToken);
+
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook, 
                     // but has not authenticated your app
@@ -46,21 +48,25 @@
             FB.api({
                 method: 'fql.query',
                 query: 'SELECT uid FROM user WHERE username=' + userName,
+            }, function (response) {
+                //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
             addFriend(uid);
         }
 
         function findFriend(username) {
-            FB.api({
-                method: 'fql.query',
-                query: 'SELECT uid FROM user WHERE username=' + username,
+            FB.api({ method: 'friends.get' }, function (response) {
+                alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
         }
 
-        function messageFriend(uid) {
+        function messageFriend() {
             FB.ui({
                 method: 'send',
-                to: uid,
+                link: 'http://portalface.net/'
+                //to: uid,
+            }, function (response) {
+                alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
         }
         function addFriend( uid ) {
@@ -69,7 +75,7 @@
                 method: 'friends.add',
                 id: uid,
             }, function (response) {
-
+                //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
         }
     </script>
