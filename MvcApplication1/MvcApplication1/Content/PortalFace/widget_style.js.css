@@ -10,11 +10,11 @@
     text-indent: -9999em;
     outline: none;
 }
-
-a.link-hover{
-    -moz-box-shadow: 0 0 5px 5px #888;
-    -webkit-box-shadow: 0 0 5px 5px#888;
-    box-shadow: 0 0 5px 5px #888;
+ 
+a.widget-content-link a:hover{
+    -moz-box-shadow: inset 0 0 5px #888;
+    -webkit-box-shadow: inset 0 0 5px#888;
+    box-shadow: inset 0 0 5px #888;
 }
 
 .widget-head a.edit  {
