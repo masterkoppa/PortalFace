@@ -66,7 +66,7 @@ namespace MvcApplication1.Controllers
                 try
                 {
                     var client = new FacebookClient(accessToken);
-                    dynamic result = client.Post("/me/feed", new { message = "Hello There!" });
+                    dynamic result = client.Post("/me/feed", new { message = status });
                     System.Diagnostics.Debug.WriteLine("Post Sent");
                 }
                 catch (FacebookOAuthException)
@@ -84,16 +84,31 @@ namespace MvcApplication1.Controllers
             }
         }
 
-        [HttpPost]
-        public void GetStock(String stockSymbol)
+        
+        public ActionResult StockInfo(String stockSymbol)
         {
-            WebRequest myRequest = WebRequest.Create("http://finance.yahoo.com/d/quotes.csv?" + stockSymbol);
+            String url = "http://finance.yahoo.com/d/quotes.csv?s=" + stockSymbol + "&f=nshgb";
 
-            WebResponse response = myRequest.GetResponse();
+            WebClient t = new WebClient();
+            System.Diagnostics.Debug.WriteLine(url);
 
-            System.Diagnostics.Debug.WriteLine(response.ToString());
+            String response = t.DownloadString(url);
 
-            
+            String[] respsonseArray = response.Split(',');
+
+
+
+            @ViewBag.symbol = stockSymbol;
+
+            @ViewBag.name = respsonseArray[0];
+
+            @ViewBag.dayHigh = respsonseArray[2];
+
+            @ViewBag.dayLow = respsonseArray[3];
+
+            @ViewBag.current = respsonseArray[4];
+
+            return View();
         }
 
 

@@ -140,7 +140,18 @@
                 </div>
                 <!--<a href = "/Home/StockPage" class="widget-content-link"> -->
                     <div id="stocks">
-                        <input type="text" value="Stock Symbol" /><button>Search</button>
+                        <input id="ticker" type="text" value="Stock Symbol" /><button onclick="searchStock()">Search</button>
+                        <div id="searchResults"></div>
+                        <script>
+                            function searchStock() {
+                                var ticker = $("ticker").val();
+
+                                $.get("/PortalFace/StockInfo", { stockSymbol: "GOOG"})
+                                    .done(function (data) {
+                                        $("#searchResults").html(data);
+                                    });
+                            }
+                        </script>
                     </div>
                 <!--</a>-->
             </li>

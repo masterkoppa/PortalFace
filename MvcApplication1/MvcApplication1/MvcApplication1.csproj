@@ -288,6 +288,7 @@
     <Content Include="Views\Home\StockPage.cshtml" />
     <Content Include="Views\Home\CalendarPage.cshtml" />
     <Content Include="Views\PortalFace\Status.cshtml" />
+    <Content Include="Views\PortalFace\StockInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

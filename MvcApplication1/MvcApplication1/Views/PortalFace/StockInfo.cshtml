@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<h1>
+    @ViewBag.name - @ViewBag.symbol
+</h1>
+
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Symbol</td>
+            <td>Bid Price</td>
+            <td>Day High</td>
+            <td>Day Low</td>
+        </tr>
+    </thead>
+    <tr>
+        <td>@ViewBag.name</td>
+        <td>@ViewBag.symbol</td>
+        <td>@ViewBag.current</td>
+        <td>@ViewBag.dayHigh</td>
+        <td>@ViewBag.dayLow</td>
+    </tr>
+</table>
+
