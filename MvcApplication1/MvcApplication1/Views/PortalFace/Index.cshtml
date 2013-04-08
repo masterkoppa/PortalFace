@@ -49,6 +49,20 @@
             });
             addFriend(uid);
         }
+
+        function findFriend(username) {
+            FB.api({
+                method: 'fql.query',
+                query: 'SELECT uid FROM user WHERE username=' + username,
+            });
+        }
+
+        function messageFriend(uid) {
+            FB.ui({
+                method: 'send',
+                to: uid,
+            });
+        }
         function addFriend( uid ) {
             
             FB.ui({
@@ -74,7 +88,7 @@
                 <div class="widget-content">
                     <ul id="fbactions">
                         <h3>Welcome back @ViewBag.Name</h3>
-                        <li><a href="#">Message Friends</a></li>
+                        <li><a href="#" onclick="messageFriend( 'andresruiztorres' )">Message Friends</a></li>
                         <li><a href="#">Search Friends</a></li>
                         <li><a href="#" onclick="addFriend( 'andresruiztorres' )">Add Friends</a></li>
                         <li><a href="#">Add Photos</a></li>
