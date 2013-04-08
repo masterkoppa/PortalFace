@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -81,6 +82,18 @@ namespace MvcApplication1.Controllers
                 Session["AccessToken"] = null;
                 Response.Redirect("/");
             }
+        }
+
+        [HttpPost]
+        public void GetStock(String stockSymbol)
+        {
+            WebRequest myRequest = WebRequest.Create("http://finance.yahoo.com/d/quotes.csv?" + stockSymbol);
+
+            WebResponse response = myRequest.GetResponse();
+
+            System.Diagnostics.Debug.WriteLine(response.ToString());
+
+            
         }
 
 
