@@ -49,7 +49,7 @@
                 method: 'fql.query',
                 query: 'SELECT uid FROM user WHERE username=' + userName,
             }, function (response) {
-                //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
+                alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
             addFriend(uid);
         }
@@ -66,7 +66,7 @@
                 link: 'http://portalface.net/'
                 //to: uid,
             }, function (response) {
-                alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
+                //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
         }
         function addFriend( uid ) {
@@ -80,9 +80,13 @@
         }
     </script>
     <!-- Look into using a more recent jQuery -->
-    <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
-    @Scripts.Render("~/Scripts/jquery-ui-personalized-1.6rc2.min.js", "~/Scripts/widget_functionality.js", "~/Scripts/LoadMainContent.js")
-
+    <!--<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>-->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    
+    @Scripts.Render( "~/Scripts/widget_functionality.js", "~/Scripts/LoadMainContent.js")
+    
     
     <div id="columns">
         
@@ -92,13 +96,20 @@
                     <h3>Facebook Actions</h3>
                 </div>
                 <div class="widget-content">
-                    <ul id="fbactions">
-                        <h3>Welcome back @ViewBag.Name</h3>
-                        <li><a href="#" onclick="messageFriend( 'andresruiztorres' )">Message Friends</a></li>
-                        <li><a href="#">Search Friends</a></li>
-                        <li><a href="#" onclick="addFriend( 'andresruiztorres' )">Add Friends</a></li>
-                        <li><a href="#">Add Photos</a></li>
-                    </ul>
+                    <h3>Welcome back @ViewBag.Name</h3>
+                    <div id="fbactions">
+                        <h4>Search Friends</h4>
+                        <div>Friend's Name: <input type="text" /></div>
+                        <h4>Message Friends</h4>
+                        <div><button onclick="messageFriend()">Open Message Dialog</button></div>
+                        <h4>Add Friends</h4>
+                        <div><a onclick="addFriend( 'andresruiztorres' )"></a></div>
+                        <h4>Add Photo</h4>
+                        <div><a href="#">Add Photos</a></div>
+                    </div>
+                    <script>
+                        $("#fbactions").accordion();
+                    </script>
                 </div>
             </li>
             <li class="widget color-yellow">  
@@ -127,17 +138,11 @@
                 <div class="widget-head">
                     <h3>Stock Watch</h3>
                 </div>
-                <a href = "/Home/StockPage" class="widget-content-link">
+                <!--<a href = "/Home/StockPage" class="widget-content-link"> -->
                     <div id="stocks">
-                        <ul>
-                            <li><pre><font color=black>AAPL:US    443.66  +11.16</font></pre></li>
-                            <li><pre><font color=black>TSLA:US     35.29   -1.56</font></pre></li>
-                            <li><pre><font color=black>GOOG:US    814.30   -7.23</font></pre></li>
-                            <li><pre><font color=black>MSFT:US     28.04   -0.1 </font></pre></li>
-                            <li><pre><font color=black>  FB:US     26.65   -0.40</font></pre></li>
-                        </ul>
+                        <input type="text" value="Stock Symbol" /><button>Search</button>
                     </div>
-                </a>
+                <!--</a>-->
             </li>
         </ul>
         
