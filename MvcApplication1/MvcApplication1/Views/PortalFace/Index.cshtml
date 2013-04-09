@@ -162,18 +162,21 @@
                     <h3>Stock Watch</h3>
                 </div>
                     <div id="stocks">
-                        <input id="ticker" name="ticker" type="text" value="Stock Symbol" /><button onclick="searchStock()">Search</button>
+                        <form id="symbolSearch">
+                            <input id="ticker" name="ticker" type="text" placeholder="Stock Symbol" /><button type="submit">Search</button>
+                        </form>
                         <div id="searchResults"></div>
                         <script>
-                            function searchStock() {
+                            $("#symbolSearch").submit(function () {
                                 var ticker = $("#ticker").val();
                                 console.log(ticker);
-                                $.get("/PortalFace/StockInfo", { stockSymbol: ticker})
+                                $.get("/PortalFace/StockInfo", { stockSymbol: ticker })
                                     .done(function (data) {
                                         $("#searchResults").html(data);
                                         $("#ticker").val("");
                                     });
-                            }
+                                return false;
+                            });
                         </script>
                     </div>
             </li>
