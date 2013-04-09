@@ -1,0 +1,18 @@
+@{
+    Layout = null;
+}
+
+<button onclick="getNewsFeed()">Load Feed</button>
+<div id="feed">hi</div>
+
+
+<script>
+    function getNewsFeed() {
+            console.log("fuck me");
+            FB.api('/me/feed',
+                 function (response) {
+                     //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
+                     $("#feed").html(JSON.stringify(response));
+                 });
+        }
+</script>

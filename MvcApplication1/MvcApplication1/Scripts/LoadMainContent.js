@@ -4,5 +4,6 @@ window.onload = function(){
 	*/
     $("#chat").load("Home/Chat"); //Change to PortalFace Folder
     $("#status").load("PortalFace/Status");
+    $("#newsfeed").load("PortalFace/NewsFeed");
 
 }
