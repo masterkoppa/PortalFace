@@ -1,0 +1,9 @@
+.ui-accordion-header, .ui-accordion-content {
+	border-radius: 0px;
+	background: inherit;
+	color: white;
+}
+
+button {
+	background: white;
+}

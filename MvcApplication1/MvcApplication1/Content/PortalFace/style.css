@@ -55,7 +55,9 @@ a {color: #3B5998;}
     width: 100%;
     background: #3B5998;
     position: fixed;
+    padding-bottom: 5px;
 }
+
 #head h1 {
     color: white;
     text-align: left;
