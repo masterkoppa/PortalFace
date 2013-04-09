@@ -181,6 +181,10 @@ a {color: #3B5998;}
     position: right;
 }
 
+#newsfeed {
+    height: 250px;
+}
+
 .text{
     width: 70%;
     margin-right: 5px;

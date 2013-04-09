@@ -55,6 +55,11 @@ namespace MvcApplication1.Controllers
            
         }
 
+        public ActionResult NewsFeed()
+        {
+            return View();
+        }
+
         [HttpPost]
         public void PostStatus(String status)
         {
