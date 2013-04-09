@@ -2,12 +2,13 @@
     Layout = null;
 }
 
-<input id="statusMessage" type="text" name="status"><i class="icon-camera"></i><button class="postStatus" id="postStatus">Submit</button>
-
+<form id="statusPost" action="">
+    <input id="statusMessage" type="text" name="status" /><button type="submit" class="postStatus" id="postStatus">Submit</button>
+</form>
 
 
 <script>
-    $("#postStatus").click(function () {
+    $("#statusPost").submit(function () {
         var statusMessage = $("#statusMessage").val();
         console.log(statusMessage);
         FB.api(
