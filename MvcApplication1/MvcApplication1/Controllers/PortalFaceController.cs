@@ -44,6 +44,9 @@ namespace MvcApplication1.Controllers
             return View();
         }
 
+        //
+        // GET: /PortalFace/Status
+
         public ActionResult Status()
         {
             return View();
@@ -55,10 +58,22 @@ namespace MvcApplication1.Controllers
            
         }
 
+        //
+        // GET: /PortalFace/Stocks
+
+        public ActionResult Stocks()
+        {
+            return View();
+        }
+
         public ActionResult NewsFeed()
         {
             return View();
         }
+
+        //
+        // GET: /PortalFace/NewsItem?title= , content= , pictureURL= 
+        // pictureURL is optional
 
         public ActionResult NewsItem(String title, String content, String pictureURL)
         {

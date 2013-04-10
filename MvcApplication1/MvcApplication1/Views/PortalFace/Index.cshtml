@@ -134,22 +134,7 @@
                     <h3>Stock Watch</h3>
                 </div>
                     <div id="stocks">
-                        <form id="symbolSearch">
-                            <input id="ticker" name="ticker" type="text" placeholder="Stock Symbol" /><button type="submit">Search</button>
-                        </form>
-                        <div id="searchResults"></div>
-                        <script>
-                            $("#symbolSearch").submit(function () {
-                                var ticker = $("#ticker").val();
-                                console.log(ticker);
-                                $.get("/PortalFace/StockInfo", { stockSymbol: ticker })
-                                    .done(function (data) {
-                                        $("#searchResults").html(data);
-                                        $("#ticker").val("");
-                                    });
-                                return false;
-                            });
-                        </script>
+
                     </div>
             </li>
             
