@@ -58,6 +58,7 @@ var widget_functionality = {
             }
             
             if (thisWidgetSettings.editable) {
+                
                 $('<a href="#" class="edit">EDIT</a>').mousedown(function (e) {
                     e.stopPropagation();    
                 }).toggle(function () {

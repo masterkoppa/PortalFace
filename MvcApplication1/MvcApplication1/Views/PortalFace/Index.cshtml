@@ -4,6 +4,23 @@
 }
 
 @section body {
+
+    <script>
+        count = 0;
+        function tryTenTimes(whatToTry) {
+            try {
+                if (count < 100) {
+                    whatToTry();
+                    count = 0;
+                } else {
+                    return false;
+                }
+            } catch (err) {
+                count = count + 1;
+                tryTenTimes(whatToTry);
+            }
+        }
+    </script>
     
     <script>
         // Load the SDK Asynchronously
@@ -33,7 +50,7 @@
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
 
-                    getNewsFeed();
+                    tryTenTimes(getNewsFeed);
 
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook, 

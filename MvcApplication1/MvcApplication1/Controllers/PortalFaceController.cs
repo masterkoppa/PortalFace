@@ -86,6 +86,9 @@ namespace MvcApplication1.Controllers
             return View();
         }
 
+        //
+        // POST: /PortalFace/PostStatus/status
+
         [HttpPost]
         public void PostStatus(String status)
         {
