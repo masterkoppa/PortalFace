@@ -60,6 +60,17 @@ namespace MvcApplication1.Controllers
             return View();
         }
 
+        public ActionResult NewsItem(String title, String content, String pictureURL)
+        {
+            @ViewBag.title = title;
+            @ViewBag.content = content;
+            if (pictureURL != null)
+            {
+                @ViewBag.picture = pictureURL;
+            }
+            return View();
+        }
+
         [HttpPost]
         public void PostStatus(String status)
         {

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="/Content/PortalFace/news_item_styling.css" />
+
+    <div class="newsitem">
+        <p>
+        <table>
+        <tr>
+            <td>
+        <h3>@ViewBag.title</h3>
+                <br />
+        @ViewBag.content
+                </td>
+
+        <td>
+        @if (@ViewBag.picture != null)
+        {
+            <img class="statusPic" src="@ViewBag.picture"  />
+        }
+        </td>
+        </tr>
+        </table>
+            </p>
+
+    </div>
+
