@@ -7,17 +7,17 @@
 
     <script>
         count = 0;
-        function tryTenTimes(whatToTry) {
+        function tryTenTimes() {
             try {
                 if (count < 100) {
-                    whatToTry();
+                    getNewsFeed();
                     count = 0;
                 } else {
                     return false;
                 }
             } catch (err) {
                 count = count + 1;
-                tryTenTimes(whatToTry);
+                tryTenTimes();
             }
         }
     </script>
@@ -50,7 +50,7 @@
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
 
-                    tryTenTimes(getNewsFeed);
+                    tryTenTimes();
 
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook, 
