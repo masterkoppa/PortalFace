@@ -7,6 +7,12 @@ This will be the home for the PortalFace application.
 
 *     [Visual Studio Integration](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)
 
+# Packages Needed #
+In order for the application to work you need to get the following NuGet Packages
+
+*    [FacebookSDK](http://nuget.org/packages/Facebook/)
+*    [Microsoft.WebSockets](http://nuget.org/packages/Microsoft.WebSockets)
+
 #Developer Notes#
 
 ## Facebook ##
