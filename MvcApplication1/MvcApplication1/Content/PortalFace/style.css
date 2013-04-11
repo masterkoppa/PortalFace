@@ -17,11 +17,11 @@
   font-style: normal;
 }
 
-/* Reset */
+/****** Reset ******/
 body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none;}
-/* End Reset */
+/****** End Reset ******/
 
-/* Custom Stuff*/
+/****** Custom Stuff ******/
 
 
 .ui-dialog-titlebar {
@@ -31,7 +31,7 @@ display: none;
 body {font-size:0.8em; font-family:Facebook Letter Faces; color: #3B5998; background: rgb(39,39,39);}
 a {color: #3B5998;}
 
-/* Colors */
+/****** Colors ******/
 .color-yellow {background:#f2bc00;}
 .color-red    {background:#dc5945;}
 .color-blue   {background:#12b0c5;}
@@ -39,17 +39,11 @@ a {color: #3B5998;}
 .color-orange {background:#ff9618;}
 .color-green  {background:#8dc100;}
 .color-purple {background:#9c4274;}
-.color-yellow h3,
-.color-white h3,
-.color-green h3
-	{color:#000;}
-.color-red h3,
-.color-blue h3,
-.color-orange h3
-	{color:#FFF;}
-/* End Colors */
+.color-yellow h3, .color-white h3, .color-green h3 {color:#000;}
+.color-red h3, .color-blue h3, .color-orange h3 {color:#FFF;}
+/****** End Colors ******/
 
-/* Head section */
+/****** Head section ******/
 #head {
     height: 30px;
     width: 100%;
@@ -66,9 +60,9 @@ a {color: #3B5998;}
     padding-top: 5px;
     padding-left: 5px;
 }
-/* End Head Section */
+/****** End Head Section ******/
 
-/* Columns section */
+/****** Columns section ******/
 #columns .column {
     float: left;
     width: 33.3%;
@@ -80,16 +74,15 @@ a {color: #3B5998;}
     background: rgb(39,39,39);
 }
 
-/* Column dividers (background-images) : */
+/****** Column dividers (background-images) : ******/
 	
 #columns #column1 .widget { margin: 10px 10px 0 10px; }
 #columns #column3 .widget { margin: 10px 10px 0 10px; }
 #columns .widget {
     margin: 10px 10px 0 10px;
     padding: 2px;
-    /*-moz-border-radius: 4px;
-    -webkit-border-radius: 4px;*/
 }
+
 #columns .widget .widget-head {
     color: #000;
     overflow: hidden;
@@ -97,74 +90,77 @@ a {color: #3B5998;}
     height: 30px;
     line-height: 30px;
 }
+
 #columns .widget .widget-head h3 {
     padding: 0 5px;
     float: left;
 }
+
 #columns .widget .widget-content {
-    /*background: white;
-    background: #333 url(img/widget-content-bg.png) repeat-x; */
     padding: 0 5px;
     color: black;
     font-family: 'Helvetica Neue';
-    /*-moz-border-radius-bottomleft: 2px;
-    -moz-border-radius-bottomright: 2px;
-    -webkit-border-bottom-left-radius: 2px;
-    -webkit-border-bottom-right-radius: 2px;*/
     line-height: 1.2em;
     overflow: hidden;
 }
+
 #columns .widget .widget-content p {
     padding: 0.8em 0;
     border-bottom: 1px solid #666;
 }
+
 #columns .widget .widget-content img {
     float: right;
     margin: 10px;
     border: 1px solid #FFF;
 }
+
 #columns .widget .widget-content pre {
     padding: 0.5em 5px;
     color: #EEE;
     font-size: 12px;
 }
+
 #columns .widget .widget-content ul {
     padding: 5px 0 5px 20px;
     list-style: disc;
 }
+
 #columns .widget .widget-content ul li {padding: 3px 0;}
+
 #columns .widget .widget-content ul.images {
     padding: 7px 0 0 0;
     list-style: none;
     height: 1%;
 }
+
 #columns .widget .widget-content ul.images li {
     display: inline;
     float: left;
 }
+
 #columns .widget .widget-content ul.images img {
     display: inline;
     float: left;
     margin: 0 0 7px 7px;
 }
-/* End Columns section */
+/****** End Columns section ******/
+
+/****** Individual Widget Customization ******/
 
 /* fbactions widget */
-
 #fbactions li{
     list-style: none;
 }
-
 #fbactions a {
     text-decoration: none;
     color: white;
 }
-
 #fbactions a:hover {
     color: black;
 }
 
-/* post widget */
+/* stock widget */
 #stocks {
     height: 250px;
     background-size: 100%;
@@ -172,7 +168,9 @@ a {color: #3B5998;}
 #stocks li {
     list-style: none;
 }
-
+#stocks:hover {
+    border: 1px solid black;
+}
 #stocks ul li pre {
     color: black;
     margin-top: 0px;
@@ -182,16 +180,13 @@ a {color: #3B5998;}
 #newsfeed img{
     position: right;
 }
-
 #newsfeed {
     height: 450px;
 }
-
 .text{
     width: 70%;
     margin-right: 5px;
 }
-
 .enter {
     width: 20%;
     margin-left: 5px;
@@ -202,7 +197,11 @@ a {color: #3B5998;}
     text-align: center;
     height: 150px;
 }
+#events:hover {
+    border: 1px solid black;
+}
 
+/****** End Individual Widget Customization ******/
 
 
 
