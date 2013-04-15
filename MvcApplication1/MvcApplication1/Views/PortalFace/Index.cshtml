@@ -129,8 +129,6 @@
                     <h3>Welcome back @ViewBag.Name</h3>
                     <br />
                     <div id="fbactions">
-                        <h4>Search Friends</h4>
-                        <div>Friend's Name: <input type="text" /></div>
                         <h4>Message Friends</h4>
                         <div><button onclick="messageFriend()">Open Message Dialog</button></div>
                         <h4>Add Friends</h4>
@@ -181,7 +179,7 @@
                 <div class="widget-head">
                     <h3>Schedule</h3>
                 </div>
-                    <a href = "/Home/CalendarPage" class="widget-content-link">
+                    <a href = "../Home/CalendarPage" class="widget-content-link">
                     <div id="events" >
                         <p>
                         
@@ -201,7 +199,8 @@
             </li>
             <li>
                 <center>
-                <img src="/Content/PortalFace/img/Logo.png" height="300px" />
+                    
+                <img src="@Url.Content("~/Content/PortalFace/img/Logo.png")" height="300px" />
                 </center>
             </li>
             
@@ -210,6 +209,6 @@
     </div>
     
     @Scripts.Render("~/Scripts/LoadMainContent.js")
-    <script type="text/javascript" src="/Scripts/widget_functionality.js"></script>
+    @Scripts.Render("~/Scripts/widget_functionality.js")
 
 }
