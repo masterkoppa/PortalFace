@@ -22,7 +22,7 @@ var widget_functionality = {
     },
 
     init : function () {
-        this.attachStylesheet('/Content/PortalFace/widget_style.js.css');
+        this.attachStylesheet('Content/PortalFace/widget_style.js.css');
         this.addWidgetControls();
         this.makeSortable();
     },
