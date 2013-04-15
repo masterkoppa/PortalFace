@@ -18,3 +18,8 @@ In order for the application to work you need to get the following NuGet Package
 ## Facebook ##
 *    To get the authentication token for the user simply access the Session["AccessToken"].   
         Make sure that it != null before using it
+
+#Live View of the Website#
+You can view live versions of our site at:  
+*    [portalface.net](http://portalface.net)
+*    [staging.portalface.net](http://staging.portalface.net)
