@@ -177,6 +177,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\DayPilot.Web.Mvc.dll" />
     <Content Include="Content\font\Elusive-Icons.svg" />
     <Content Include="Content\PortalFace\fbfont.css" />
     <Content Include="Content\PortalFace\fbfont_ie7.css" />
@@ -250,6 +251,8 @@
     <None Include="Properties\PublishProfiles\ProductionDeploy.pubxml" />
     <None Include="Properties\PublishProfiles\Staging.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
