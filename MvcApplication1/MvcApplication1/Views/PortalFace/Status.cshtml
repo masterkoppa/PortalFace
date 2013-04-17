@@ -2,8 +2,8 @@
     Layout = null;
 }
 
-<form id="statusPost" action="">
-    <input id="statusMessage" type="text" name="status" /><button type="submit" class="postStatus" id="postStatus">Submit</button>
+<form id="statusPost">
+    <input id="statusMessage" type="text" name="status" class="oneLineForm" placeholder="What's going on?"/><button type="submit" class="postStatus oneLineFormButton" id="postStatus">Submit</button>
 </form>
 
 
@@ -18,7 +18,7 @@
             type: 'POST',
             data: { status: statusMessage },
             success: function (response) {
-                alert("SUCCESS");
+                //alert("SUCCESS");
             }
         });
         $("#statusMessage").val('');
