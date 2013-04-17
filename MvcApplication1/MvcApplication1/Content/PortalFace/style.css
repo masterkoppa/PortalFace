@@ -8,7 +8,7 @@
         url('http://www.mediafont.com/storage/contents/11/FACEBOLF.OTF'); 
     /* non-IE */ 
 }
-
+/*
 @font-face {
   font-family: "FontAwesome";
   src: url('/assets/fontawesome-webfont.eot');
@@ -16,7 +16,7 @@
   font-weight: normal;
   font-style: normal;
 }
-
+*/
 /****** Reset ******/
 body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none;}
 /****** End Reset ******/
@@ -42,7 +42,7 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
 display: none;
 }
 
-body {font-size:0.8em; font-family:Facebook Letter Faces; color: #3B5998; background: rgb(39,39,39);}
+body {font-size:0.8em; /*font-family:Facebook Letter Faces;*/ color: #3B5998; background: rgb(39,39,39);}
 a {color: #3B5998;}
 
 /****** Colors ******/
@@ -175,6 +175,7 @@ a {color: #3B5998;}
 }
 
 /* stock widget */
+
 #stocks {
     height: 250px;
     background-size: 100%;
@@ -191,6 +192,7 @@ a {color: #3B5998;}
 }
 
 /* news feed */
+/*
 #newsfeed img{
     position: right;
 }
@@ -205,11 +207,10 @@ a {color: #3B5998;}
     width: 20%;
     margin-left: 5px;
 }
-
+*/
 /* events */
 #events {
     text-align: center;
-    height: 150px;
 }
 #events:hover {
     border: 1px solid black;
