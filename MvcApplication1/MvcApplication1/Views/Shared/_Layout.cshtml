@@ -14,11 +14,21 @@
     </head>
     <body>
     <div id="head">
-        <h1>PortalFace</h1>
-	
-	<div class="logOut">
-		<button class="facebookLogout" />
-	</div>
+        <h1>
+            PortalFace
+            @if (Session["AccessToken"] != null){
+                <!--Show only if the user is logged in-->
+	            <button class="logOut" onclick="logoutFB()">Log Out</button>
+                
+                <script>
+                    function logoutFB() {
+                        FB.logout(function (response) {
+                            window.location.replace("/");
+                        });
+                    }
+                </script>
+            }
+        </h1>
     </div>
     @RenderSection("body", required: false)
     
