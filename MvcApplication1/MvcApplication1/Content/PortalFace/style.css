@@ -34,6 +34,23 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
     font-weight: bold;
 }
 
+/*Stock Table Format*/
+
+.StockInfoTitle {
+    padding-top:25px;
+    padding-bottom:25px;
+}
+
+.StockTableHeaders {
+    font-weight: bold;
+    font-size: medium;
+    text-decoration:underline
+} 
+
+.StockInfo {
+    padding-top: 5px;
+    font-size: medium;
+}
 
 /****** Custom Stuff ******/
 
