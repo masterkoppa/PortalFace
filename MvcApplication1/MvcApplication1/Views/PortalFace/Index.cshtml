@@ -5,6 +5,7 @@
 
 @section body {
     <script>
+        var newsFeedLoad = false;
         // Load the SDK Asynchronously
         (function (d) {
             var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
@@ -19,7 +20,7 @@
                 //appId: '393153644124938', // Production App ID
                 appId: '504444616269557', //Development App ID
 		        //appId: '519653581405061', //Staging App ID
-		status: true, // check login status
+		        status: true, // check login status
                 cookie: true, // enable cookies to allow the server to access the session
                 xfbml: true  // parse XFBML
             });
@@ -34,7 +35,10 @@
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
 
-                    getNewsFeed();
+                    if (newsFeedLoad == false) {
+                        getNewsFeed();
+                        newsFeedLoad = true;
+                    }
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook, 
                     // but has not authenticated your app
