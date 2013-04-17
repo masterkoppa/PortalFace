@@ -2,12 +2,12 @@
     Layout = null;
 }
 
-<h1>
+<h1 class = "StockInfoTitle">
     @ViewBag.name - @ViewBag.symbol
 </h1>
 <table>
     <thead>
-        <tr>
+        <tr class = "StockTableHeaders">
             <td>Name</td>
             <td>Symbol</td>
             <td>Bid Price</td>
@@ -15,7 +15,7 @@
             <td>Day Low</td>
         </tr>
     </thead>
-    <tr>
+    <tr class = "StockInfo">
         <td>@ViewBag.name</td>
         <td>@ViewBag.symbol</td>
         <td>@ViewBag.current</td>
