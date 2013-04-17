@@ -8,18 +8,18 @@
 <table>
     <thead>
         <tr class = "StockTableHeaders">
-            <td>Name</td>
-            <td>Symbol</td>
-            <td>Bid Price</td>
-            <td>Day High</td>
+            <td class ="stockCol">Name</td>
+            <td class ="stockCol">Symbol</td>
+            <td class ="stockCol">Bid Price</td>
+            <td class ="stockCol">Day High</td>
             <td>Day Low</td>
         </tr>
     </thead>
     <tr class = "StockInfo">
-        <td>@ViewBag.name</td>
-        <td>@ViewBag.symbol</td>
-        <td>@ViewBag.current</td>
-        <td>@ViewBag.dayHigh</td>
+        <td class ="stockCol">@ViewBag.name</td>
+        <td class ="stockCol">@ViewBag.symbol</td>
+        <td class ="stockCol">@ViewBag.current</td>
+        <td class ="stockCol">@ViewBag.dayHigh</td>
         <td>@ViewBag.dayLow</td>
     </tr>
 </table>
