@@ -1,11 +1,16 @@
 
 
 .newsitem {
-    height: 100px;
+    clear: both;
+    
 }
 
 .statusPic {
-    position: relative;
-    top: -100px;
+    /*position: relative;*/
+    vertical-align: bottom;
+    float: right;
+}
 
+ul#feed {
+    list-style: none;
 }

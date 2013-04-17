@@ -307,7 +307,6 @@
     <Content Include="Views\PortalFace\StockInfo.cshtml" />
     <Content Include="Views\PortalFace\NewsItem.cshtml" />
     <Content Include="Views\PortalFace\Index.cshtml" />
-    <Content Include="Views\PortalFace\NewsFeed.cshtml" />
     <Content Include="Views\PortalFace\Stocks.cshtml" />
   </ItemGroup>
   <ItemGroup>
