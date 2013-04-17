@@ -58,6 +58,37 @@ namespace MvcApplication1.Controllers
            
         }
 
+        // POST: /PortalFace/PostPhoto
+        [HttpPost]
+        public ActionResult PostPhoto ( )
+        {
+            System.Diagnostics.Debug.WriteLine("Request Recieved");
+            //Start FB Connection
+            if (Session["AccessToken"] != null)
+            {
+                var accessToken = Session["AccessToken"].ToString();
+                try
+                {
+                    var client = new FacebookClient(accessToken);
+                    //dynamic result = client.Post("/me/feed", new { message = status });
+                    //System.Diagnostics.Debug.WriteLine("Post Sent");
+                }
+                catch (FacebookOAuthException)
+                {
+                    Session["AccessToken"] = null;
+                    Response.Redirect("/");
+                }
+                ViewBag.AccessToken = Session["AccessToken"];
+
+            }
+            else
+            {
+                Session["AccessToken"] = null;
+                Response.Redirect("/");
+            }
+            return View();
+        }
+
         //
         // GET: /PortalFace/Stocks
 

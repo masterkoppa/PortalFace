@@ -34,8 +34,10 @@
 
         window.fbAsyncInit = function () {
             FB.init({
-                appId: '393153644124938', // App ID
-                status: true, // check login status
+                //appId: '393153644124938', // Production App ID
+                appId: '504444616269557', //Development App ID
+		//appId: '519653581405061', //Staging App ID
+		status: true, // check login status
                 cookie: true, // enable cookies to allow the server to access the session
                 xfbml: true  // parse XFBML
             });
@@ -108,6 +110,8 @@
         }
         function addFriend() {
             var uid = $("#friendUsername").val();
+
+            // server call
             FB.ui({
                 method: 'friends.add',
                 id: uid
