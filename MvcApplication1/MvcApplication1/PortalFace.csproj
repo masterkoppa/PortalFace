@@ -306,6 +306,7 @@
     <Content Include="Views\PortalFace\NewsItem.cshtml" />
     <Content Include="Views\PortalFace\Index.cshtml" />
     <Content Include="Views\PortalFace\Stocks.cshtml" />
+    <Content Include="Views\PortalFace\ManageStocks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

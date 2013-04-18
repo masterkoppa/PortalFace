@@ -2,6 +2,7 @@
 
 .newsitem {
     clear: both;
+    vertical-align: top;
 }
 
 .statusPic {

@@ -15,6 +15,8 @@ namespace MvcApplication1.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.MainPage = true;
+
             //Start FB Connection
             if (Session["AccessToken"] != null)
             {
@@ -194,5 +196,12 @@ namespace MvcApplication1.Controllers
             return View();
         }
 
+        public ActionResult ManageStocks()
+        {
+            return View();
+        }
+
     }
+
+    
 }

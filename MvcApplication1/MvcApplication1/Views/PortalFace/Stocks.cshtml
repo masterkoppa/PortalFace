@@ -2,13 +2,15 @@
     Layout = null;
 }
 
-<div>
-<div class="stock">@ViewBag.stock1</div>
-<div class="stock">@ViewBag.stock2</div>
-<div class="stock">@ViewBag.stock3</div>
+<button class="float-right" onclick="window.location.replace('PortalFace/ManageStocks');">Manage my Stocks</button>
+<div class="summary-container">
+    <h2 class="text-center">Quick Overview</h2>
+    <div class="stock">@ViewBag.stock1</div>
+    <div class="stock">@ViewBag.stock2</div>
+    <div class="stock">@ViewBag.stock3</div>
 </div>
 <form id="symbolSearch">
-    <input id="ticker" name="ticker" type="text" placeholder="Stock Symbol" /><button type="submit">Search</button>
+    <input id="ticker" name="ticker" type="text" placeholder="Stock Symbol" /><button type="submit">Quick Search</button>
 </form>
 <div id="searchResults"></div>
 <script>
