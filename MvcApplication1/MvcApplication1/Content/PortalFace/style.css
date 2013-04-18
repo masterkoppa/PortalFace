@@ -21,6 +21,12 @@
 body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none;}
 /****** End Reset ******/
 
+.stock {
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
 .oneLineForm {
     width: 75%;
 }

@@ -94,6 +94,12 @@ namespace MvcApplication1.Controllers
 
         public ActionResult Stocks()
         {
+            //Load the info that we want to show
+            //The top 3 stocks should be loaded from the DB
+            ViewBag.stock1 = "GOOG";
+            ViewBag.stock2 = "APPL";
+            ViewBag.stock3 = "TEST";
+
             return View();
         }
 

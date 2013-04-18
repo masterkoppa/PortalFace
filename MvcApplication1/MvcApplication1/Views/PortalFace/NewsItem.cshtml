@@ -2,29 +2,27 @@
     Layout = null;
 }
 
-    <li>
-    <div class="newsitem">
-        
+<li>
+    <div class="newsitem">    
         <table width="100%">
         <tr>
             <td>
-        <h3>@ViewBag.title</h3>
+                <h3>@ViewBag.title</h3>
                 <br />
-        @ViewBag.content
-                </td>
+                @ViewBag.content
+            </td>
 
         
         @if (@ViewBag.picture != null)
         {
             <td>
-            <img class="statusPic" src="@ViewBag.picture"  />
+                <img class="statusPic" src="@ViewBag.picture"  />
             </td>
         }
         
         </tr>
         </table>
         <br />
-
     </div>
-        </li>
+</li>
 
