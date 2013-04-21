@@ -105,7 +105,7 @@ namespace MvcApplication1.Controllers
             return View();
         }
 
-        public ActionResult NewsFeed()
+        public ActionResult Timeline()
         {
             return View();
         }
