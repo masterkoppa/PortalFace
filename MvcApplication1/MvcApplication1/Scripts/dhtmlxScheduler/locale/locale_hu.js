@@ -1,0 +1,7 @@
+/*
+Copyright DHTMLX LTD. http://www.dhtmlx.com
+To use this component please contact sales@dhtmlx.com to obtain license
+*/
+scheduler.locale={date:{month_full:"Janu\u00e1r,Febru\u00e1r,M\u00e1rcius,\u00c1prilis,M\u00e1jus,J\u00fanius,J\u00falius,Augusztus,Szeptember,Okt\u00f3ber,November,December".split(","),month_short:"Jan,Feb,M\u00e1r,\u00c1pr,M\u00e1j,J\u00fan,J\u00fal,Aug,Sep,Okt,Nov,Dec".split(","),day_full:"Vas\u00e1rnap,H\u00e9tf\u00f5,Kedd,Szerda,Cs\u00fct\u00f6rt\u00f6k,P\u00e9ntek,szombat".split(","),day_short:"Va,H\u00e9,Ke,Sze,Cs\u00fc,P\u00e9,Szo".split(",")},labels:{dhx_cal_today_button:"Ma",day_tab:"Nap",
+week_tab:"H\u00e9t",month_tab:"H\u00f3nap",new_event:"\u00daj esem\u00e9ny",icon_save:"Ment\u00e9s",icon_cancel:"M\u00e9gse",icon_details:"R\u00e9szletek",icon_edit:"Szerkeszt\u00e9s",icon_delete:"T\u00f6rl\u00e9s",confirm_closing:"",confirm_deleting:"Az esem\u00e9ny t\u00f6r\u00f6lve lesz, biztosan folytatja?",section_description:"Le\u00edr\u00e1s",section_time:"Id\u00f5szak",full_day:"Egesz napos",confirm_recurring:"Biztosan szerkeszteni akarod az \u00f6sszes ism\u00e9tl\u00f5d\u00f5 esem\u00e9ny be\u00e1ll\u00edt\u00e1s\u00e1t?",
+section_recurring:"Esem\u00e9ny ism\u00e9tl\u00e9se",button_recurring:"Tilt\u00e1s",button_recurring_open:"Enged\u00e9lyez\u00e9s",button_edit_series:"Edit series",button_edit_occurrence:"Szerkeszt\u00e9s b\u00edr\u00f3s\u00e1g",agenda_tab:"Napirend",date:"D\u00e1tum",description:"Le\u00edr\u00e1s",year_tab:"\u00c9v"}};

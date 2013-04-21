@@ -1,0 +1,7 @@
+/*
+Copyright DHTMLX LTD. http://www.dhtmlx.com
+To use this component please contact sales@dhtmlx.com to obtain license
+*/
+scheduler.locale={date:{month_full:"Janu\u00e1r,Febru\u00e1r,Marec,Apr\u00edl,M\u00e1j,J\u00fan,J\u00fal,August,September,Okt\u00f3ber,November,December".split(","),month_short:"Jan,Feb,Mar,Apr,M\u00e1j,J\u00fan,J\u00fal,Aug,Sept,Okt,Nov,Dec".split(","),day_full:"Nede\u013ea,Pondelok,Utorok,Streda,\u0160tvrtok,Piatok,Sobota".split(","),day_short:"Ne,Po,Ut,St,\u0160t,Pi,So".split(",")},labels:{dhx_cal_today_button:"Dnes",day_tab:"De\u0148",week_tab:"T\u00fd\u017ede\u0148",month_tab:"Mesiac",new_event:"Nov\u00e1 udalos\u0165",
+icon_save:"Ulo\u017ei\u0165",icon_cancel:"Sp\u00e4\u0165",icon_details:"Detail",icon_edit:"Edituj",icon_delete:"Zmaza\u0165",confirm_closing:"Va\u0161e zmeny nebud\u00fa ulo\u017een\u00e9. Skuto\u010dne?",confirm_deleting:"Udalos\u0165 bude natrvalo vymazan\u00e1. Skuto\u010dne?",section_description:"Pozn\u00e1mky",section_time:"Doba platnosti",confirm_recurring:"Prajete si upravi\u0165 cel\u00fa radu opakovan\u00fdch udalost\u00ed?",section_recurring:"Opakovanie udalosti",button_recurring:"Vypnut\u00e9",
+button_recurring_open:"Zapnut\u00e9",button_edit_series:"Upravi\u0165 opakovania",button_edit_occurrence:"Upravi\u0165 in\u0161tancie",agenda_tab:"Program",date:"D\u00e1tum",description:"Pozn\u00e1mka",year_tab:"Rok",full_day:"Cel\u00fd de\u0148",week_agenda_tab:"Program",grid_tab:"Mrie\u017eka"}};

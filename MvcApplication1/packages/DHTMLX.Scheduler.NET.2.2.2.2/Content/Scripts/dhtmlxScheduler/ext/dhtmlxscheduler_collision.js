@@ -1,0 +1,8 @@
+/*
+Copyright DHTMLX LTD. http://www.dhtmlx.com
+To use this component please contact sales@dhtmlx.com to obtain license
+*/
+Scheduler.plugin(function(a){(function(){function i(c){var b=a._props?a._props[a._mode]:null,f=a.matrix?a.matrix[a._mode]:null,g=b||f;if(b)var h=g.map_to;if(f)h=g.y_property;g&&c&&(n=a.getEvent(c)[h])}var n,d;a.config.collision_limit=1;a.attachEvent("onBeforeDrag",function(a){i(a);return!0});a.attachEvent("onBeforeLightbox",function(c){var b=a.getEvent(c);d=[b.start_date,b.end_date];i(c);return!0});a.attachEvent("onEventChanged",function(c){if(!c)return!0;var b=a.getEvent(c);if(!a.checkCollision(b)){if(!d)return!1;
+b.start_date=d[0];b.end_date=d[1];b._timed=this.is_one_day_event(b)}return!0});a.attachEvent("onBeforeEventChanged",function(c){return a.checkCollision(c)});a.attachEvent("onEventAdded",function(c,b){var f=a.checkCollision(b);f||a.deleteEvent(c)});a.attachEvent("onEventSave",function(c,b){b=a._lame_clone(b);b.id=c;b.rec_type&&a._roll_back_dates(b);return a.checkCollision(b)});a.checkCollision=function(c){var b=[],f=a.config.collision_limit;if(c.rec_type)for(var g=a.getRecDates(c),h=0;h<g.length;h++)for(var d=
+a.getEvents(g[h].start_date,g[h].end_date),j=0;j<d.length;j++)(d[j].event_pid||d[j].id)!=c.id&&b.push(d[j]);else for(var b=a.getEvents(c.start_date,c.end_date),e=0;e<b.length;e++)if(b[e].id==c.id){b.splice(e,1);break}var i=a._props?a._props[a._mode]:null,o=a.matrix?a.matrix[a._mode]:null,m=i||o;if(i)var k=m.map_to;if(o)k=m.y_property;var l=!0;if(m){for(var p=0,e=0;e<b.length;e++)b[e][k]==c[k]&&b[e].id!=c.id&&p++;p>=f&&(l=!1)}else b.length>=f&&(l=!1);if(!l){var q=!a.callEvent("onEventCollision",[c,
+b]);q||(c[k]=n||c[k]);return q}return l}})()});
