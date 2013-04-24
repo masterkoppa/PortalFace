@@ -36,7 +36,6 @@ namespace MvcApplication1.Controllers
              */
             
             scheduler.Skin = DHXScheduler.Skins.Terrace;
-            scheduler.InitialDate = new DateTime(2012, 09, 03);
 
             scheduler.Config.multi_day = true;//render multiday events
 
@@ -48,28 +47,7 @@ namespace MvcApplication1.Controllers
 
         public ContentResult Data()
         {
-            var data = new SchedulerAjaxData(
-                    new List<CalendarEvent>{ 
-                        new CalendarEvent{
-                            id = 1, 
-                            text = "Sample Event", 
-                            start_date = new DateTime(2012, 09, 03, 6, 00, 00), 
-                            end_date = new DateTime(2012, 09, 03, 8, 00, 00)
-                        },
-                        new CalendarEvent{
-                            id = 2, 
-                            text = "New Event", 
-                            start_date = new DateTime(2012, 09, 05, 9, 00, 00), 
-                            end_date = new DateTime(2012, 09, 05, 12, 00, 00)
-                        },
-                        new CalendarEvent{
-                            id = 3, 
-                            text = "Multiday Event", 
-                            start_date = new DateTime(2012, 09, 03, 10, 00, 00), 
-                            end_date = new DateTime(2012, 09, 10, 12, 00, 00)
-                        }
-                    }
-                );
+            var data = new SchedulerAjaxData( new CalendarClassesDataContext().Events );
             return (ContentResult)data;
         }
 
@@ -79,23 +57,29 @@ namespace MvcApplication1.Controllers
             
             try
             {
-                var changedEvent = (CalendarEvent)DHXEventsHelper.Bind(typeof(CalendarEvent), actionValues);
-
+                var changedEvent = (Event)DHXEventsHelper.Bind(typeof(Event), actionValues);
+                var data = new CalendarClassesDataContext();
      
 
                 switch (action.Type)
                 {
                     case DataActionTypes.Insert:
                         //do insert
-                        action.TargetId = changedEvent.id;//assign postoperational id
+                        data.Events.InsertOnSubmit( changedEvent );
                         break;
                     case DataActionTypes.Delete:
                         //do delete
+                        changedEvent = data.Events.SingleOrDefault( ev => ev.id == action.SourceId );
+                        data.Events.DeleteOnSubmit( changedEvent );
                         break;
                     default:// "update"                          
                         //do update
+                        var eventToUpdate = data.Events.SingleOrDefault( ev => ev.id == action.SourceId );
+                        DHXEventsHelper.Update( eventToUpdate , changedEvent , new List<string>() {"id"});
                         break;
                 }
+                data.SubmitChanges();
+                action.TargetId = changedEvent.id;
             }
             catch
             {

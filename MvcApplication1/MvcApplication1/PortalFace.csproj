@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -178,10 +179,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CalendarClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalendarClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Models\SchedulerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Calendar.mdf" />
+    <Content Include="App_Data\Calendar_log.ldf">
+      <DependentUpon>Calendar.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\font\Elusive-Icons.svg" />
     <Content Include="Content\PortalFace\fbfont.css" />
     <Content Include="Content\PortalFace\fbfont_ie7.css" />
@@ -253,6 +263,11 @@
     <Content Include="Content\font\Elusive-Icons.eot" />
     <Content Include="Content\font\Elusive-Icons.ttf" />
     <Content Include="Content\font\Elusive-Icons.woff" />
+    <Content Include="Models\CalendarClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CalendarClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\ProductionDeploy.pubxml" />
     <None Include="Properties\PublishProfiles\Staging.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -585,10 +600,15 @@
     <Content Include="Views\Calendar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\CalendarClasses.dbml.layout">
+      <DependentUpon>CalendarClasses.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
