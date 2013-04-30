@@ -24,7 +24,7 @@
     <body>
     <div id="head">
         <h1>
-            PortalFace
+            <a href=@Url.Action("Index", "Home") class="title_text">PortalFace</a>
             @if (Session["AccessToken"] != null){
                 <!--Show only if the user is logged in-->
 	            <button class="logOut" onclick="logoutFB()">Log Out</button>
