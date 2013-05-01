@@ -198,6 +198,46 @@ namespace MvcApplication1.Controllers
 
         public ActionResult ManageStocks()
         {
+            CalendarEntities db = new CalendarEntities();
+
+            StocksOwned[] stocks = db.StocksOwneds.ToArray();
+
+            int leftStocks = 0;
+            int rightStocks = 0;
+
+            StocksOwned[] leftList;
+            StocksOwned[] rightList;
+
+            if (stocks.Length % 2 != 0)
+            {
+                leftStocks = (stocks.Length + 1) / 2;
+                rightStocks = (stocks.Length - 1) / 2;
+            }
+            else
+            {
+                leftStocks = (stocks.Length) / 2;
+                rightStocks = (stocks.Length) / 2;
+            }
+
+            //System.Diagnostics.Debug.WriteLine("Left: " + leftStocks);
+            //System.Diagnostics.Debug.WriteLine("Right: " + rightStocks);
+
+            leftList = new StocksOwned[leftStocks];
+            rightList = new StocksOwned[rightStocks];
+
+            for (int i = 0; i < leftStocks; i++)
+            {
+                leftList[i] = stocks[i];
+            }
+
+            for (int i = leftStocks; i < stocks.Length; i++)
+            {
+                rightList[i-leftStocks] = stocks[i];
+            }
+
+            @ViewBag.leftList = leftList;
+            @ViewBag.rightList = rightList;
+
             return View();
         }
 
