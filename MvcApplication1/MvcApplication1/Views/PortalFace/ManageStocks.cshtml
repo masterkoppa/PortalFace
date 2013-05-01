@@ -3,5 +3,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section body{
-    <h2>ManageStocks</h2>
+    <div id="columns">
+        <ul id="column1" class="column">
+            <li class="widget color-blue" >
+                <div class="widget-head">
+                    <h3>Your stocks today</h3>
+                </div>
+                <div class="widget-content">
+                    <p>Summary of your top 5 stocks goes here.</p>
+                </div>
+            </li>
+        </ul>
+        <ul id="column2" class="column">
+            @foreach (MvcApplication1.Controllers.StocksOwned i in ViewBag.leftList) {
+                <li class="widget color-purple" >
+                <div class="widget-head">
+                    <h3>
+                        @i.Symbol.Replace("\"", "")
+                    </h3>
+                </div>
+                <div id="@i.Symbol.Replace("\"", "")" class="widget-content">
+                    <script>
+                        $(document).ready(function () {
+                            var stock = "@i.Symbol.Replace("\"", "")"
+                            getStock(stock, stock);
+                        });
+                        
+                    </script>
+                </div>
+            </li>
+            }
+        </ul>
+        <ul id="column3" class="column">
+            @foreach (MvcApplication1.Controllers.StocksOwned i in ViewBag.rightList) {
+                <li class="widget color-purple" >
+                <div class="widget-head">
+                    <h3>Google, Inc</h3>
+                </div>
+                <div class="widget-content">
+                    <p>Stock Summary</p>
+                </div>
+            </li>
+            }
+        </ul>
+    </div>
+
+    @Scripts.Render("~/Scripts/widget_functionality.js")
 }

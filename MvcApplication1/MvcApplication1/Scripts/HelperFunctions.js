@@ -44,3 +44,10 @@ function getNewsFeed() {
              }
          });
 }
+
+function getStock(symbol, id_for_result) {
+    $.get("/PortalFace/StockInfo", { stockSymbol: symbol })
+            .done(function (data) {
+                $("#" + id_for_result).html(data);
+            });
+}
