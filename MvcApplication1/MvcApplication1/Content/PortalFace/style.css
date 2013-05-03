@@ -54,7 +54,7 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
 
 .UserNameTitle {
     float: right;
-    font-size:large;
+    font-size: large;
     padding-right: 15px;
 }
 
@@ -99,8 +99,20 @@ display: none;
 body {font-size:0.8em; /*font-family:Facebook Letter Faces;*/ color: #3B5998; background: rgb(39,39,39);}
 a {color: #3B5998;}
 
+
+/*Facebook actions Formatting*/
+.fb_Actions {
+    font-weight:normal;
+    letter-spacing:1pt;
+    font-size:14px;
+    text-align:left;
+    font-family:arial, helvetica, sans-serif;line-height:1;
+}
+
+
 /****** Colors ******/
-.color-yellow {background:#f2bc00;}
+.color-main {background:#3B5998;}
+.color-yellow {background:#3B5998;}
 .color-red    {background:#dc5945;}
 .color-blue   {background:#12b0c5;}
 .color-white  {background:#dfdfdf;}
