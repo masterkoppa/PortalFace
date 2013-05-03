@@ -247,11 +247,10 @@ a {color: #3B5998;}
     text-decoration: none;
     color: white;
 }
+
 #fbactions a:hover {
     color: black;
 }
-
-/* stock widget */
 
 #stocks {
     height: 250px;
@@ -260,9 +259,7 @@ a {color: #3B5998;}
 #stocks li {
     list-style: none;
 }
-#stocks:hover {
-    border: 1px solid black;
-}
+
 #stocks ul li pre {
     color: black;
     margin-top: 0px;
@@ -270,8 +267,11 @@ a {color: #3B5998;}
 #events {
     text-align: center;
 }
+
+
 #events:hover {
-    border: 1px solid black;
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
 }
 
 /****** End Individual Widget Customization ******/
