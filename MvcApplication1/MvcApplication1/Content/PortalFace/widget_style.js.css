@@ -11,11 +11,23 @@
     outline: none;
 }
  
-a.widget-content-link a:hover{
-    -moz-box-shadow: inset 0 0 5px #888;
-    -webkit-box-shadow: inset 0 0 5px#888;
-    box-shadow: inset 0 0 5px #888;
+
+b.widget-content-link:hover {
+
 }
+
+
+
+
+.widget-content-link {
+    font-weight:normal;
+    letter-spacing:1pt;
+    font-size:14px;
+    text-align:left;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
+}
+
 
 .widget-head a.edit  {
     float: right;

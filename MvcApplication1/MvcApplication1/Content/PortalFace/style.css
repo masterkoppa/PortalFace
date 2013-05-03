@@ -27,6 +27,7 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
 
 .text-center {
     text-align: center;
+    padding-bottom:10px;
 }
 
 .title_text {
@@ -88,6 +89,16 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
     font-size: medium;
 }
 
+/*********** Timeline formatting  *************/
+
+.newsitem {
+    font-weight:normal;
+    letter-spacing:1pt;
+    font-size:14px;
+    text-align:left;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
+}
 
 /****** Custom Stuff ******/
 
@@ -256,25 +267,6 @@ a {color: #3B5998;}
     color: black;
     margin-top: 0px;
 }
-
-/* news feed */
-/*
-#newsfeed img{
-    position: right;
-}
-#newsfeed {
-    height: 450px;
-}
-.text{
-    width: 70%;
-    margin-right: 5px;
-}
-.enter {
-    width: 20%;
-    margin-left: 5px;
-}
-*/
-/* events */
 #events {
     text-align: center;
 }
