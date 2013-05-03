@@ -31,6 +31,7 @@
     margin: 8px 4px 8px 4px;
     outline: none;
 }
+    
 
 .widget-head a.collapse {
     float: left;
@@ -79,4 +80,12 @@
     display: inline;
     margin: 0 5px 0 0;
     cursor: pointer;
+}
+
+.widget-titles{
+    font-size: 20px;
+     font-weight:bold;
+    font-family:helvetica;
+    line-height:1.8;
+
 }

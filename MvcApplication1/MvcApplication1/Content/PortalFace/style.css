@@ -27,7 +27,12 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
 
 .text-center {
     text-align: center;
-    padding-bottom:10px;
+    padding-bottom:18px;
+    font-weight:normal;
+    letter-spacing:1pt;
+    font-size:16px;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
 }
 
 .title_text {
@@ -117,7 +122,8 @@ a {color: #3B5998;}
     letter-spacing:1pt;
     font-size:14px;
     text-align:left;
-    font-family:arial, helvetica, sans-serif;line-height:1;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
 }
 
 
