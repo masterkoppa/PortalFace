@@ -27,6 +27,12 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
 
 .text-center {
     text-align: center;
+    padding-bottom:18px;
+    font-weight:normal;
+    letter-spacing:1pt;
+    font-size:16px;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
 }
 
 .title_text {
@@ -52,11 +58,18 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
     width: 20%;
 }
 
+.UserNameTitle {
+    float: right;
+    font-size: large;
+    padding-right: 15px;
+}
+
 .logOut {
     float: right;
     margin-right: 1em;
     font-weight: bold;
 }
+
 
 /*Stock Table Format*/
 
@@ -81,6 +94,16 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
     font-size: medium;
 }
 
+/*********** Timeline formatting  *************/
+
+.newsitem {
+    font-weight:normal;
+    letter-spacing:1pt;
+    font-size:14px;
+    text-align:left;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
+}
 
 /****** Custom Stuff ******/
 
@@ -92,8 +115,21 @@ display: none;
 body {font-size:0.8em; /*font-family:Facebook Letter Faces;*/ color: #3B5998; background: rgb(39,39,39);}
 a {color: #3B5998;}
 
+
+/*Facebook actions Formatting*/
+.fb_Actions {
+    font-weight:normal;
+    letter-spacing:1pt;
+    font-size:14px;
+    text-align:left;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
+}
+
+
 /****** Colors ******/
-.color-yellow {background:#f2bc00;}
+.color-main {background:#3B5998;}
+.color-yellow {background:#3B5998;}
 .color-red    {background:#dc5945;}
 .color-blue   {background:#12b0c5;}
 .color-white  {background:#dfdfdf;}
@@ -105,6 +141,7 @@ a {color: #3B5998;}
 /****** End Colors ******/
 
 /****** Head section ******/
+
 #head {
     height: 30px;
     width: 100%;
@@ -121,6 +158,7 @@ a {color: #3B5998;}
     padding-top: 5px;
     padding-left: 5px;
 }
+
 /****** End Head Section ******/
 
 /****** Columns section ******/
@@ -141,7 +179,7 @@ a {color: #3B5998;}
 #columns #column3 .widget { margin: 10px 10px 0 10px; }
 #columns .widget {
     margin: 10px 10px 0 10px;
-    padding: 2px;
+    padding: 5px;
 }
 
 #columns .widget .widget-head {
@@ -161,12 +199,12 @@ a {color: #3B5998;}
     padding: 0 5px;
     color: black;
     font-family: 'Helvetica Neue';
-    line-height: 1.2em;
+    line-height: 1.3em;
     overflow: hidden;
 }
 
 #columns .widget .widget-content p {
-    padding: 0.8em 0;
+    padding: .8em 0;
     border-bottom: 1px solid #666;
 }
 
@@ -203,7 +241,7 @@ a {color: #3B5998;}
 #columns .widget .widget-content ul.images img {
     display: inline;
     float: left;
-    margin: 0 0 7px 7px;
+    margin: 0px 0px 7px 7px;
 }
 /****** End Columns section ******/
 
@@ -217,11 +255,10 @@ a {color: #3B5998;}
     text-decoration: none;
     color: white;
 }
+
 #fbactions a:hover {
     color: black;
 }
-
-/* stock widget */
 
 #stocks {
     height: 250px;
@@ -230,37 +267,19 @@ a {color: #3B5998;}
 #stocks li {
     list-style: none;
 }
-#stocks:hover {
-    border: 1px solid black;
-}
+
 #stocks ul li pre {
     color: black;
     margin-top: 0px;
 }
-
-/* news feed */
-/*
-#newsfeed img{
-    position: right;
-}
-#newsfeed {
-    height: 450px;
-}
-.text{
-    width: 70%;
-    margin-right: 5px;
-}
-.enter {
-    width: 20%;
-    margin-left: 5px;
-}
-*/
-/* events */
 #events {
     text-align: center;
 }
+
+
 #events:hover {
-    border: 1px solid black;
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
 }
 
 /****** End Individual Widget Customization ******/

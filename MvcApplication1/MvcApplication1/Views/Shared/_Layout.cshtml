@@ -25,6 +25,10 @@
     <div id="head">
         <h1>
             <a href=@Url.Action("Index", "Home") class="title_text">PortalFace</a>
+
+            <!--<img src = "proPic_link" />   Code to try to access user's Profile Picture  -->
+
+
             @if (Session["AccessToken"] != null){
                 <!--Show only if the user is logged in-->
 	            <button class="logOut" onclick="logoutFB()">Log Out</button>
@@ -87,6 +91,9 @@
                     };
                 </script>
             }
+
+             <text class ="UserNameTitle"> @ViewBag.Name</text>
+
         </h1>
     </div>
     @RenderSection("body", required: false)

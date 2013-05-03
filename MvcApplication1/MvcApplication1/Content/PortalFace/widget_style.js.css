@@ -10,12 +10,16 @@
     text-indent: -9999em;
     outline: none;
 }
- 
-a.widget-content-link a:hover{
-    -moz-box-shadow: inset 0 0 5px #888;
-    -webkit-box-shadow: inset 0 0 5px#888;
-    box-shadow: inset 0 0 5px #888;
+
+.widget-content-link {
+    font-weight:normal;
+    letter-spacing:1pt;
+    font-size:14px;
+    text-align:left;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1;
 }
+
 
 .widget-head a.edit  {
     float: right;
@@ -27,8 +31,9 @@ a.widget-content-link a:hover{
     margin: 8px 4px 8px 4px;
     outline: none;
 }
+    
 
-.widget-head a.collapse  {
+.widget-head a.collapse {
     float: left;
     display: inline;
     background: url(img/buttons.gif) no-repeat -52px 0;
@@ -75,4 +80,11 @@ a.widget-content-link a:hover{
     display: inline;
     margin: 0 5px 0 0;
     cursor: pointer;
+}
+
+.widget-titles{
+    font-size: 20px;
+     font-weight:bold;
+    font-family:helvetica;
+    line-height:1.8;
 }
