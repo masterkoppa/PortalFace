@@ -52,11 +52,18 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
     width: 20%;
 }
 
+.UserNameTitle {
+    float: right;
+    font-size:large;
+    padding-right: 15px;
+}
+
 .logOut {
     float: right;
     margin-right: 1em;
     font-weight: bold;
 }
+
 
 /*Stock Table Format*/
 

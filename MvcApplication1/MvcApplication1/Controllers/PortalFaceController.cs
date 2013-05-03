@@ -26,7 +26,15 @@ namespace MvcApplication1.Controllers
                     var client = new FacebookClient(accessToken);
                     dynamic result = client.Get("me", new { fields = "name,id" });
                     string name = result.name;
+
+                    /*This is how I'm trying to access the Profile Picture, Please look over (Not Working)*/
+                    var proPic_link = "http://graph.facebook.com/" + result.id + "/picture";
+
+
                     ViewBag.Name = name;
+
+                   
+
                 }
                 catch (FacebookOAuthException)
                 {

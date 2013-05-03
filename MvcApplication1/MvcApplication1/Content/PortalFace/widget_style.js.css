@@ -28,7 +28,7 @@ a.widget-content-link a:hover{
     outline: none;
 }
 
-.widget-head a.collapse  {
+.widget-head a.collapse {
     float: left;
     display: inline;
     background: url(img/buttons.gif) no-repeat -52px 0;
