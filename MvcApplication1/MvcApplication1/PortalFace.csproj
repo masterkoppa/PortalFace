@@ -603,6 +603,8 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\LoadMainContent.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\swfobject.js" />
+    <Content Include="Scripts\web_socket.js" />
     <Content Include="Scripts\widget_functionality.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
