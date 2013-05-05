@@ -16,7 +16,8 @@ namespace MvcApplication1.Controllers
         public ActionResult Index()
         {
 
-            @ViewBag.Name = Session["name"];
+            ViewBag.Name = Session["name"];
+            ViewBag.pic = Session["Pic"];
 
             //Being initialized in that way, scheduler will use CalendarController.Data as a the datasource and CalendarController.Save to process changes
             var scheduler = new DHXScheduler(this);

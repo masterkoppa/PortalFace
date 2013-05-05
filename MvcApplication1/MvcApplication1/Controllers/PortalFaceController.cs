@@ -32,7 +32,9 @@ namespace MvcApplication1.Controllers
 
 
                     ViewBag.Name = name;
+                    ViewBag.pic = proPic_link;
                     Session["Name"] = name;
+                    Session["Pic"] = proPic_link;
 
                    
 
@@ -207,7 +209,8 @@ namespace MvcApplication1.Controllers
 
         public ActionResult ManageStocks()
         {
-            @ViewBag.Name = Session["name"];
+            ViewBag.Name = Session["name"];
+            ViewBag.pic = Session["Pic"];
 
             CalendarEntities db = new CalendarEntities();
 
