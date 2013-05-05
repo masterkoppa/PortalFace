@@ -169,6 +169,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\TestWebSocketHandler.cs">
+      <Link>TestWebSocketHandler.cs</Link>
+    </Compile>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -642,6 +645,7 @@
     <Content Include="Views\PortalFace\Stocks.cshtml" />
     <Content Include="Views\PortalFace\ManageStocks.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
+    <Content Include="WSHttpHandler.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
