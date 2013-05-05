@@ -3,7 +3,7 @@ function getNewsFeed() {
     FB.api('/me/feed',
          function (response) {
              //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
-             console.log(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
+             //console.log(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
              //$("#feed").html(JSON.stringify(response));
              var dataArray = response['data'];
 
