@@ -32,6 +32,7 @@ namespace MvcApplication1.Controllers
 
 
                     ViewBag.Name = name;
+                    Session["Name"] = name;
 
                    
 
@@ -206,6 +207,8 @@ namespace MvcApplication1.Controllers
 
         public ActionResult ManageStocks()
         {
+            @ViewBag.Name = Session["name"];
+
             CalendarEntities db = new CalendarEntities();
 
             StocksOwned[] stocks = db.StocksOwneds.ToArray();
