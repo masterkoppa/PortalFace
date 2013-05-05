@@ -25,6 +25,20 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
     float: right;
 }
 
+.Manage_Stocks_Button {
+    float: right;
+}
+
+.Manage_Stocks_Button:hover {
+    opacity:0.4;
+    filter:alpha(opacity=40);
+}
+
+.main_page_Button:hover {
+    opacity:0.4;
+    filter:alpha(opacity=40);
+}
+
 .text-center {
     text-align: center;
     padding-bottom:18px;

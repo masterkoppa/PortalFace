@@ -2,7 +2,7 @@
     Layout = null;
 }
 
-<button class="float-right" onclick ="window.location.replace('PortalFace/ManageStocks');">Manage my Stocks</button>
+<button class="Manage_Stocks_Button" onclick ="window.location.replace('PortalFace/ManageStocks');">Manage my Stocks</button>
 <div class="summary-container">
     <h2 class="text-center">Quick Overview</h2>
     <div class="stock">@ViewBag.stock1</div>
@@ -10,7 +10,7 @@
     <div class="stock">@ViewBag.stock3</div>
 </div>
 <form id="symbolSearch">
-    <center><input id="ticker" name="ticker" type="text" placeholder="Stock Symbol" /><button type="submit">Quick Search</button></center>
+    <center><input id="ticker" name="ticker" type="text" placeholder="Stock Symbol" /><button class="main_page_Button" type="submit">Quick Search</button></center>
 </form>
 <div id="searchResults"></div>
 <script>
