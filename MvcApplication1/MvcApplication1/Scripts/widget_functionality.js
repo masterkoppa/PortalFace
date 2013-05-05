@@ -22,11 +22,9 @@ var widget_functionality = {
     },
 
     init: function () {
-        try {
-            this.attachStylesheet('Content/PortalFace/widget_style.js.css');
-        } catch (e) {
-            this.attachStylesheet('../Content/PortalFace/widget_style.js.css');
-        }
+        this.attachStylesheet('Content/PortalFace/widget_style.js.css');
+        this.attachStylesheet('../Content/PortalFace/widget_style.js.css');
+        
         
         
         this.addWidgetControls();
