@@ -142,14 +142,12 @@ a {color: #3B5998;}
 
 
 /****** Colors ******/
-.color-main {background:#3B5998;}
-.color-yellow {background:#3B5998;}
-.color-red    {background:#dc5945;}
-.color-blue   {background:#12b0c5;}
-.color-white  {background:#dfdfdf;}
-.color-orange {background:#ff9618;}
-.color-green  {background:#8dc100;}
-.color-purple {background:#9c4274;}
+.color-main {background:#54877E;}
+.color-red    {background:#8C6175;}
+.color-blue   {background:#B1B88C;}
+.color-orange {background:#E3A83E;}
+.color-green  {background:#9E373E;}
+.color-purple {background:#AABBBB;}
 .color-yellow h3, .color-white h3, .color-green h3 {color:#000;}
 .color-red h3, .color-blue h3, .color-orange h3 {color:#FFF;}
 /****** End Colors ******/
