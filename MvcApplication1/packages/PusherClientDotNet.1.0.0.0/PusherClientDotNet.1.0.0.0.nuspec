@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>PusherClientDotNet</id>
+    <version>1.0.0.0</version>
+    <title>PusherClientDotNet</title>
+    <authors>Pusher</authors>
+    <owners>Pusher</owners>
+    <projectUrl>https://github.com/neilljordan/PusherClientDotNet</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Pusher Client for .NET</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Pusher</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="4.5.11" />
+      <dependency id="WebSocket4Net" version="0.8" />
+    </dependencies>
+    <references>
+      <reference file="PusherClientDotNet.dll" />
+    </references>
+  </metadata>
+</package>

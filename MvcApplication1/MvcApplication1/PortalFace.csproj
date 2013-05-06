@@ -49,6 +49,16 @@
     <Reference Include="Microsoft.WebSockets">
       <HintPath>..\packages\Microsoft.WebSockets.0.2.3\lib\net45\Microsoft.WebSockets.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PusherClientDotNet">
+      <HintPath>..\packages\PusherClientDotNet.1.0.0.0\lib\net40\PusherClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PusherRESTDotNet">
+      <HintPath>..\packages\PusherRESTDotNet.1.2.0.26184\lib\net35\PusherRESTDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -79,9 +89,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -167,6 +174,9 @@
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WebSocket4Net">
+      <HintPath>..\packages\WebSocket4Net.0.8\lib\net40\WebSocket4Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\TestWebSocketHandler.cs">
@@ -195,6 +205,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\PortalFaceController.cs" />
+    <Compile Include="Controllers\PusherController.cs" />
     <Compile Include="Controllers\StocksOwned.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -221,6 +232,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="Content\font\Elusive-Icons.svg" />
+    <Content Include="Content\PortalFace\customBootstrap.css" />
     <Content Include="Content\PortalFace\fbfont.css" />
     <Content Include="Content\PortalFace\fbfont_ie7.css" />
     <Content Include="Content\PortalFace\img\buttons.gif" />
