@@ -25,10 +25,7 @@
     <div id="head">
         <h1>
             <a href=@Url.Action("Index", "Home") class="title_text">PortalFace</a>
-
             
-
-
             @if (Session["AccessToken"] != null){
                 <!--Show only if the user is logged in-->
 	            <button class="logOut" onclick="logoutFB()">Log Out</button>
@@ -90,9 +87,9 @@
                         });
                     };
                 </script>
+                
+                <p class="UserNameTitle"><img src="@ViewBag.pic" height="28px"/></p><p class ="UserNameTitle">@ViewBag.Name</p>
             }
-
-             <p class="UserNameTitle"><img src="@ViewBag.pic" height="28px"/></p><p class ="UserNameTitle">@ViewBag.Name</p>
 
         </h1>
     </div>
