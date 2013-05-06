@@ -149,10 +149,10 @@ a {color: #3B5998;}
 .color-green  {background:#9E373E;}
 .color-purple {background:#AABBBB;}
 .color-yellow {
-    background: yellow;
+    background: #54877E;
 }
 .color-white {
-    background: white; /*Change me!*/
+    background: #AABBBB; /*Change me!*/
 }
 .color-yellow h3, .color-white h3, .color-green h3 {color:#000;}
 .color-red h3, .color-blue h3, .color-orange h3 {color:#FFF;}
