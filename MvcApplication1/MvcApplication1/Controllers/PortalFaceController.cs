@@ -283,6 +283,7 @@ namespace MvcApplication1.Controllers
             @ViewBag.rightList = rightList;
             @ViewBag.stocks = db.StocksOwneds.ToArray();
             @ViewBag.colors = colors;
+            @ViewBag.random = new Random(leftList.Length);
 
             return View();
         }

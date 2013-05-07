@@ -76,7 +76,7 @@
         <ul id="column2" class="column">
             @foreach (string i in ViewBag.leftList)
             {
-                Random rdn = new Random(i.GetHashCode());
+                Random rdn = ViewBag.random;
                 int r = rdn.Next(ViewBag.colors.Length);
                 <li class="widget @ViewBag.colors[r]" >
                 <div class="widget-head">
@@ -99,7 +99,7 @@
         <ul id="column3" class="column">
             @foreach (string i in ViewBag.rightList)
             {
-                Random rdn = new Random(i.GetHashCode());
+                Random rdn = ViewBag.random;
                 <li class="widget @ViewBag.colors[rdn.Next(ViewBag.colors.Length)]" >
                 <div class="widget-head">
                     <h3>
