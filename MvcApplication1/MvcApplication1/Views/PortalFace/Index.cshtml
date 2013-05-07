@@ -37,6 +37,8 @@
 
             //var imgURL = $("#photoURL").val();
 
+            imgURL = imgURL + ".jpg";
+
             console.log(imgURL);
             FB.api('/'+uid+'/photos', 'post', {
                 message: 'photo description',
