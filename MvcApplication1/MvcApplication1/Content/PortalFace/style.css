@@ -131,14 +131,14 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
 
 .StockInfoTitle {
     padding-top:25px;
-    padding-bottom:25px;
-    font-style:oblique;
+    padding-bottom:10px;
+    text-align: center;
 }
 
 .StockTableHeaders {
     font-weight: bold;
     font-size: medium;
-    text-decoration:underline
+    text-decoration:underline;
 } 
 
 .StockInfo {
@@ -165,7 +165,7 @@ display: none;
 }
 
 body {font-size:0.8em; /*font-family:Facebook Letter Faces;*/ color: #3B5998; background: rgb(39,39,39);}
-a {color: #3B5998;}
+a {color: black;}
 
 
 /*Facebook actions Formatting*/

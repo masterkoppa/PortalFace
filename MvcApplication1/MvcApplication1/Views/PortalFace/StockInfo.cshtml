@@ -3,24 +3,25 @@
 }
 
 <h1 class = "StockInfoTitle">
-    @ViewBag.name - @ViewBag.symbol
+    @ViewBag.name - <a href="http://www.google.com/finance?q=@ViewBag.symbol" target="_blank">@ViewBag.symbol</a>
 </h1>
 <table>
-    <thead>
-        <tr class = "StockTableHeaders">
-            <td class ="stockCol">Name</td>
-            <td class ="stockCol">Symbol</td>
-            <td class ="stockCol">Bid Price</td>
-            <td class ="stockCol">Day High</td>
-            <td>Day Low</td>
-        </tr>
-    </thead>
-    <tr class = "StockInfo">
-        <td class ="stockCol">@ViewBag.name</td>
-        <td class ="stockCol">@ViewBag.symbol</td>
-        <td class ="stockCol">@ViewBag.current</td>
-        <td class ="stockCol">@ViewBag.dayHigh</td>
-        <td>@ViewBag.dayLow</td>
-    </tr>
+<td>
+<dl class="dl-horizontal">
+    <dt>Name</dt>
+    <dd>@ViewBag.name</dd>
+    <dt>Symbol</dt>
+    <dd>@ViewBag.symbol</dd>
+    <dt>Bid Price</dt>
+    <dd>@ViewBag.current</dd>
+</dl>
+</td>
+<td>
+<dl class="dl-horizontal float-right">
+    <dt>Day High</dt>
+    <dd>@ViewBag.dayHigh</dd>
+    <dt>Day Low</dt>
+    <dd>@ViewBag.dayLow</dd>
+</dl>
+</td>
 </table>
-

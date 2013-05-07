@@ -273,7 +273,7 @@ namespace MvcApplication1.Controllers
 
             @ViewBag.symbol = stockSymbol;
 
-            @ViewBag.name = respsonseArray[0];
+            @ViewBag.name = respsonseArray[0].Replace('"', ' ').Trim();
 
             @ViewBag.dayHigh = respsonseArray[2];
 
