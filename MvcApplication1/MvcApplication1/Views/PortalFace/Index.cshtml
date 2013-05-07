@@ -211,8 +211,8 @@
                     <script>
                         $("#chatSend").click(function () {
                             var Message = $("#chat_Messages").val();
-                            Message = "@ViewBag.name: " + Message;
-                            console.log(Message);
+                            Message = "<b>@ViewBag.name:</b> " + Message;
+                            //console.log(Message);
                             var trigered = channel.trigger('client-portalface-chat-messages', { message: Message });
                             $("#chat").append("" + Message + "<br/>");
                             $("#chat_Messages").val('');
