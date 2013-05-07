@@ -67,10 +67,13 @@
     <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
     <script>
         var pusher = new Pusher('ab3a6a2e93203b02ee34');
-        var channel = pusher.subscribe('portalface-chat-messages');
-        channel.bind('portalface-chat-messages', function (data) {
-            alert('An event was triggered with message: ' + data.message);
+        var channel = pusher.subscribe('private-portalface-chat-messages');
+        
+        channel.bind('client-portalface-chat-messages', function (data) {
+            console.log('An event was triggered with message: ');// + data.message);
         });
+
+        console.log(channel);
     </script> 
 
     <div id="columns">
@@ -160,7 +163,9 @@
                     <button id="chatSend">Send</button>
                     <script>
                         $("#chatSend").click(function () {
+                            console.log("Clicked me!");
                             var trigered = channel.trigger('client-portalface-chat-messages', { message: "Test" });
+                            console.log(trigered);
                         });
                     </script>
                 </div>
