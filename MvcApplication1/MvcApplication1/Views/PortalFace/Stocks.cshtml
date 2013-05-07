@@ -5,10 +5,13 @@
 <button class="Manage_Stocks_Button" onclick ="window.location.replace('PortalFace/ManageStocks');">Manage my Stocks</button>
 <div class="summary-container">
     <h2 class="text-center">Quick Overview</h2>
-    <div class="stock">@ViewBag.stock1</div>
-    <div class="stock">@ViewBag.stock2</div>
-    <div class="stock">@ViewBag.stock3</div>
+    <div class="stock" id="stock0"></div>
+    <div class="stock" id="stock1"></div>
+    <div class="stock" id="stock2"></div>
 </div>
+<br />
+<br />
+<hr />
 <form id="symbolSearch" class="form-inline">
     <center><input id="ticker" name="ticker" type="text" placeholder="Stock Symbol" /><button class="main_page_Button" type="submit">Quick Search</button></center>
 </form>
@@ -24,4 +27,12 @@
             });
         return false;
     });
+
+    $.get("./PortalFace/getRandom3", {})
+        .done(function (data) {
+            for (i = 0; i < 3; i++) {
+                $("#stock" + i).html("<h3>" + data["results"][i]["Symbol"] + "</h3><br/>$" + data["resultsDifference"][i].formatMoney(2, ".", ","));
+            }
+            console.log(JSON.stringify(data));
+        });
 </script>

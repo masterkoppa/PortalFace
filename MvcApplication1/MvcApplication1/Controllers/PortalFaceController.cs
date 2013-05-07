@@ -209,6 +209,42 @@ namespace MvcApplication1.Controllers
            // db.StocksOwneds.Add()
         }
 
+        /**
+         * Returns a list of 3 random stocks owned 
+         */
+        [HttpGet]
+        public JsonResult getRandom3()
+        {
+            CalendarEntities db = new CalendarEntities();
+            
+            StocksOwned[] stocksList = db.StocksOwneds.ToArray();
+            Decimal[] difference = getAllDiferences();
+
+
+            StocksOwned[] results = new StocksOwned[3];
+            Decimal[] resultsDifference = new Decimal[3];
+            Random r = new Random();
+
+            HashSet<int> index = new HashSet<int>();
+
+            while (index.ToArray().Length < 3)
+            {
+                index.Add(r.Next(stocksList.Length));
+            }
+
+            int[] finalIndex = index.ToArray();
+
+            for (int i = 0; i < 3; i++)
+            {
+                int ind = finalIndex[i];
+                results[i] = stocksList[ind];
+                resultsDifference[i] = difference[ind];
+            }
+            
+
+            return Json(new {results, resultsDifference}, JsonRequestBehavior.AllowGet);
+        }
+
 
         //
         // GET: /PortalFace/Stocks?stockSymbol
@@ -246,6 +282,61 @@ namespace MvcApplication1.Controllers
             @ViewBag.current = respsonseArray[4];
 
             return View();
+        }
+
+        private Decimal[] getAllDiferences()
+        {
+            CalendarEntities db = new CalendarEntities();
+
+            StocksOwned[] stocksList = db.StocksOwneds.ToArray();
+
+            String symbols = "";
+
+            for (int i = 0; i < stocksList.Length; i++)
+            {
+                symbols += stocksList[i].Symbol + "+";
+            }
+
+            symbols = symbols.Remove(symbols.Length - 1);
+
+            //Additional info: www.gummy-stuff.org/Yahoo-data.htm
+            String url = "http://finance.yahoo.com/d/quotes.csv?s=" + symbols + "&f=b";
+
+            WebClient t = new WebClient();
+            System.Diagnostics.Debug.WriteLine(url);
+
+            String response = t.DownloadString(url);
+
+            String[] bids = response.Split('\n');
+
+            Decimal[] difference = new Decimal[stocksList.Length];
+
+            for (int i = 0; i < stocksList.Length; i++)
+            {
+
+                try
+                {
+                    difference[i] = (Decimal.Parse(bids[i]) - stocksList[i].Price) * stocksList[i].Amount;
+                }
+                catch (Exception ex)
+                {
+                    //Assume market is closed, difference of 0
+                    difference[i] = 0;
+                }
+            }
+
+            return difference;
+        }
+
+        /**
+         * Returns a JSON Array with the winnings/losses for each stock owned
+         */
+        [HttpGet]
+        public JsonResult getMargins()
+        {
+            Decimal[] difference = getAllDiferences();
+
+            return Json(difference, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult ManageStocks()

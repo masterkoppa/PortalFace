@@ -21,6 +21,43 @@
 body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none;}
 /****** End Reset ******/
 
+.profit_section {
+    margin-right: 20px;
+    display: inline;
+}
+
+.profit_title {
+    font-size: medium;
+}
+
+.positive_stock {
+    text-align: right;
+    color: #54877E;
+}
+
+.negative_stock {
+    text-align: right;
+    color: #9E373E;
+}
+
+.up_arrow {
+    float: left;
+    background: url(img/buttons.gif) no-repeat -52px 0;
+    width: 14px;
+    height: 14px;
+    outline: none;
+    overflow: hidden
+}
+
+.down_arrow {
+    float: left;
+    background: url(img/buttons.gif) no-repeat -52px 0;
+    width: 14px;
+    height: 14px;
+    outline: none;
+    background-position: -38px 0px;
+}
+
 .float-right {
     float: right;
 }
@@ -279,7 +316,7 @@ a {color: #3B5998;}
 }
 
 #stocks {
-    height: 250px;
+    height: 400px;
     background-size: 100%;
 }
 #stocks li {
