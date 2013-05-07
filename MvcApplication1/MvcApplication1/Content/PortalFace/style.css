@@ -58,22 +58,23 @@ body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border
     background-position: -38px 0px;
 }
 
+.chatbox {
+    margin-top: 2em;
+    margin-left: 1em;
+    margin-right: 5em;
+    font-size: 15px;
+    height:250px; 
+    width:auto; 
+    border:hidden; 
+    overflow:auto;
+}
+
 .float-right {
     float: right;
 }
 
 .Manage_Stocks_Button {
     float: right;
-}
-
-.Manage_Stocks_Button:hover {
-    opacity:0.4;
-    filter:alpha(opacity=40);
-}
-
-.main_page_Button:hover {
-    opacity:0.4;
-    filter:alpha(opacity=40);
 }
 
 .text-center {

@@ -125,11 +125,11 @@
                     <!-- <h3>Welcome back @ViewBag.Name <button onclick="document.querySelector('input').click()">Or click</button></h3> -->
                     <br />
                     <div id="fbactions">
-                        <h4 class ="fb_Actions">Message Friends</h4>
-                        <div><button onclick="messageFriend()">Open Message Dialog</button></div>
-                        <h4 class ="fb_Actions">Add Friends</h4>
-                        <div><input type="text" placeholder="Friend's Facebook Id" id="friendUsername" /><button onclick="addFriend()">Add Friend</button></div>
-                        <h4 class ="fb_Actions">Add Photo</h4>
+                        <h4 class="fb_Actions">Message Friends</h4>
+                        <div><button class="btn" onclick="messageFriend()">Open Message Dialog</button></div>
+                        <h4 class="fb_Actions">Add Friends</h4>
+                        <form class="form-inline"><input type="text" placeholder="Friend's Facebook Id" id="friendUsername" /><button class="btn" onclick="addFriend()">Add Friend</button></form>
+                        <h4 class="fb_Actions">Add Photo</h4>
                         <div id="photo_upload">
                             <p>
                                 <a id="link">Finished.</a>
@@ -203,20 +203,25 @@
                     <h3 class = "widget-titles"><strong>Global Chat</strong></h3>
                 </div>
                 <div class="widget-content">
-                    <div id="chat" style ="height:250px; width:auto; border:hidden; overflow:auto">
-                        Welcome to the chat! <br/>
+                    
+                    <div id="chat" class="chatbox">
+                        <b>Welcome to the chat!</b><br/>
                     </div>
-                    <input type="text" id="chat_Messages" />
-                    <button id="chatSend">Send</button>
+                    <form id="chatSend" class="form-inline">
+                        <input type="text" class="oneLineForm" id="chat_Messages" />
+                        <button type="submit" class=" oneLineFormButton  btn">Send</button>
+                    </form>
+                    
                     <script>
-                        $("#chatSend").click(function () {
+                        $("#chatSend").submit(function () {
                             var Message = $("#chat_Messages").val();
                             Message = "<b>@ViewBag.name:</b> " + Message;
                             //console.log(Message);
                             var trigered = channel.trigger('client-portalface-chat-messages', { message: Message });
                             $("#chat").append("" + Message + "<br/>");
                             $("#chat_Messages").val('');
-                            console.log(trigered);
+                            //console.log(trigered);
+                            return false;
                         });
                     </script>
                 </div>
