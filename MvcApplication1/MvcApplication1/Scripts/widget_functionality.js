@@ -77,7 +77,7 @@ var widget_functionality = {
                     return false;
                 }).appendTo($(settings.handleSelector,this));
                 $('<div class="edit-box" style="display:none;"/>')
-                    .append('<ul><li class="item"><label>Change the title?</label><input value="' + $('h3',this).text() + '"/></li>')
+                    //.append('<ul><li class="item"><label>Change the title?</label><input value="' + $('h3',this).text() + '"/></li>')
                     .append((function(){
                         var colorList = '<li class="item"><label>Available colors:</label><ul class="colors">';
                         $(thisWidgetSettings.colorClasses).each(function () {
