@@ -1,6 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "DHXScheduler initialization sample";
+    ViewBag.Title = "Calendar";
 }
 @section body{
     <style>
@@ -9,7 +9,10 @@
             background-color:#eee;
         }
     </style>
-    <div style="height:1000px;width:900px;margin:0 auto">
+    <div style="height:600px;width:900px;margin:0px auto">
+        <br />
+        <br />
+        <br />
         @Html.Raw(Model.Render())
     </div>
 }
