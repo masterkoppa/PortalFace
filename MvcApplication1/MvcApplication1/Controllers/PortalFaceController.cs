@@ -10,6 +10,8 @@ namespace MvcApplication1.Controllers
 {
     public class PortalFaceController : Controller
     {
+
+        private String[] colors = { "color-yellow", "color-red", "color-blue", "color-white", "color-orange", "color-green" };
         //
         // GET: /PortalFace/
 
@@ -168,6 +170,24 @@ namespace MvcApplication1.Controllers
             }
         }
 
+        [HttpPost]
+        public void BuyStocks(String symbol, String amount, String price)
+        {
+            System.Diagnostics.Debug.WriteLine("Making Purchase");
+            CalendarEntities db = new CalendarEntities();
+            StocksOwned newStock = new StocksOwned();
+
+            newStock.Price = Decimal.Parse(price);
+            newStock.Symbol = symbol;
+            newStock.Amount = Int32.Parse(amount);
+            newStock.Id = db.StocksOwneds.Count();
+            db.StocksOwneds.Add(newStock);
+            db.SaveChanges();
+
+            System.Diagnostics.Debug.WriteLine("Submited new Purchase");
+           // db.StocksOwneds.Add()
+        }
+
 
         //
         // GET: /PortalFace/Stocks?stockSymbol
@@ -178,7 +198,7 @@ namespace MvcApplication1.Controllers
             String url = "http://finance.yahoo.com/d/quotes.csv?s=" + stockSymbol + "&f=nshgb";
 
             WebClient t = new WebClient();
-            System.Diagnostics.Debug.WriteLine(url);
+            //System.Diagnostics.Debug.WriteLine(url);
 
             String response = t.DownloadString(url);
 
@@ -214,13 +234,23 @@ namespace MvcApplication1.Controllers
 
             CalendarEntities db = new CalendarEntities();
 
-            StocksOwned[] stocks = db.StocksOwneds.ToArray();
+            StocksOwned[] stocksList = db.StocksOwneds.ToArray();
+            HashSet<string> symbols = new HashSet<string>();
 
+            for (int i = 0; i < stocksList.Length; i++)
+            {
+                symbols.Add(stocksList[i].Symbol);
+            }
+
+
+            String[] stocks = symbols.ToArray();
+
+            System.Diagnostics.Debug.WriteLine(stocks.Length);
             int leftStocks = 0;
             int rightStocks = 0;
 
-            StocksOwned[] leftList;
-            StocksOwned[] rightList;
+            String[] leftList;
+            String[] rightList;
 
             if (stocks.Length % 2 != 0)
             {
@@ -236,8 +266,8 @@ namespace MvcApplication1.Controllers
             //System.Diagnostics.Debug.WriteLine("Left: " + leftStocks);
             //System.Diagnostics.Debug.WriteLine("Right: " + rightStocks);
 
-            leftList = new StocksOwned[leftStocks];
-            rightList = new StocksOwned[rightStocks];
+            leftList = new String[leftStocks];
+            rightList = new String[rightStocks];
 
             for (int i = 0; i < leftStocks; i++)
             {
@@ -251,6 +281,8 @@ namespace MvcApplication1.Controllers
 
             @ViewBag.leftList = leftList;
             @ViewBag.rightList = rightList;
+            @ViewBag.stocks = db.StocksOwneds.ToArray();
+            @ViewBag.colors = colors;
 
             return View();
         }

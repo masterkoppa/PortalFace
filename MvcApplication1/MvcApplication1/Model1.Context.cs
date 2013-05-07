@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1.Controllers
+namespace MvcApplication1
 {
     using System;
     using System.Data.Entity;

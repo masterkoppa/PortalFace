@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cef5a616b4b84d44b6b276faadbbda1d" Name="Diagram1">
+      <Diagram DiagramId="c4f1c6b2bbb2440c83ae723c8e3f9692" Name="Diagram1">
         <EntityTypeShape EntityType="CalendarModel.StocksOwned" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

@@ -15,7 +15,7 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Symbol" Type="varchar" Nullable="false" MaxLength="8" />
           <Property Name="Amount" Type="int" Nullable="false" />
-          <Property Name="DatePurchased" Type="datetime" />
+          <Property Name="Price" Type="money" Nullable="false" />
           <Property Name="Owner" Type="int" Nullable="false" />
         </EntityType>
       </Schema>
@@ -33,7 +33,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Symbol" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
           <Property Name="Amount" Type="Int32" Nullable="false" />
-          <Property Name="DatePurchased" Type="DateTime" Precision="3" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Owner" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
@@ -48,7 +48,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Symbol" ColumnName="Symbol" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Owner" ColumnName="Owner" />
               </MappingFragment>
             </EntityTypeMapping>

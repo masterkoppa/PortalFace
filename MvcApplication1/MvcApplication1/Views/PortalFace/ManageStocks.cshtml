@@ -5,45 +5,117 @@
 @section body{
     <div id="columns">
         <ul id="column1" class="column">
+            <li class="widget color-yellow" >
+                <div class="widget-head">
+                    <h3>Add new stocks</h3>
+                </div>
+                <div class="widget-content">
+                    <form id="buyStocks" class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" for="newStockSymbol">Stock Symbol:</label>
+                            <div class="controls">
+                                <input type="text" id="newStockSymbol" placeholder="Stock Symbol, Ex: GOOG"/>
+
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="stockCount">Amount: </label>
+                            <div class="controls">
+                                <input type="number" id="stockCount" min="0" value="0" step="1"/><br />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="stockCount">Price: </label>
+                            <div class="controls">
+                                <input type="number" id="stockPrice" min="0" value="0.00" step="0.1"/><br />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit">Buy</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Form Submit Script -->
+                    <script>
+                        $("#buyStocks").submit(function () {
+                            var stockSymbol = $("#newStockSymbol").val();
+                            var count = $("#stockCount").val();
+                            var stockPrice = $("#stockPrice").val();
+
+                            // post to server
+                            $.ajax({
+                                url: './BuyStocks',
+                                type: 'POST',
+                                data: { symbol: stockSymbol, amount: count, price: stockPrice },
+                                success: function (response) {
+                                    //alert("SUCCESS");
+                                }
+                            });
+                            $("#newStockSymbol").val('');
+                            $("#stockCount").val('0');
+                            return true;//Return false here to not refresh the page
+                        });
+                    </script>
+                </div>
+            </li>
             <li class="widget color-blue" >
                 <div class="widget-head">
                     <h3>Your stocks today</h3>
                 </div>
                 <div class="widget-content">
-                    <p>Summary of your top 5 stocks goes here.</p>
+                    
+                    @foreach (MvcApplication1.StocksOwned i in ViewBag.stocks)
+                    {
+                        <h3>@i.Symbol</h3>
+                        <p>Bought @i.Amount Shares</p>
+                    }
                 </div>
             </li>
         </ul>
         <ul id="column2" class="column">
-            @foreach (MvcApplication1.Controllers.StocksOwned i in ViewBag.leftList) {
-                <li class="widget color-purple" >
+            @foreach (string i in ViewBag.leftList)
+            {
+                Random rdn = new Random(i.GetHashCode());
+                int r = rdn.Next(ViewBag.colors.Length);
+                <li class="widget @ViewBag.colors[r]" >
                 <div class="widget-head">
                     <h3>
-                        @i.Symbol.Replace("\"", "")
+                        @i.Replace("\"", "")
                     </h3>
                 </div>
-                <div id="@i.Symbol.Replace("\"", "")" class="widget-content">
+                <div id="@i.Replace("\"", "")" class="widget-content">
                     <script>
                         $(document).ready(function () {
-                            var stock = "@i.Symbol.Replace("\"", "")"
+                            var stock = "@i.Replace("\"", "")"
                             getStock(stock, stock);
                         });
                         
                     </script>
                 </div>
-            </li>
+                </li>
             }
         </ul>
         <ul id="column3" class="column">
-            @foreach (MvcApplication1.Controllers.StocksOwned i in ViewBag.rightList) {
-                <li class="widget color-purple" >
+            @foreach (string i in ViewBag.rightList)
+            {
+                Random rdn = new Random(i.GetHashCode());
+                <li class="widget @ViewBag.colors[rdn.Next(ViewBag.colors.Length)]" >
                 <div class="widget-head">
-                    <h3>Google, Inc</h3>
+                    <h3>
+                        @i.Replace("\"", "")
+                    </h3>
                 </div>
-                <div class="widget-content">
-                    <p>Stock Summary</p>
+                <div id="@i.Replace("\"", "")" class="widget-content">
+                    <script>
+                        $(document).ready(function () {
+                            var stock = "@i.Replace("\"", "")"
+                            getStock(stock, stock);
+                        });
+
+                    </script>
                 </div>
-            </li>
+                </li>
             }
         </ul>
     </div>

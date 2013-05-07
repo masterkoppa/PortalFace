@@ -2,20 +2,20 @@
     Layout = null;
 }
 
-<form id="statusPost">
+<form id="statusPost" class="form-inline">
     <input id="statusMessage" type="text" name="status" class="oneLineForm" placeholder="What's going on?"/>
-    <button class="main_page_Button" type="submit" class="postStatus oneLineFormButton" id="postStatus">Submit</button>
+    <button type="submit" class="main_page_Button postStatus oneLineFormButton btn" id="postStatus">Submit</button>
 </form>
 
 
 <script>
     $("#statusPost").submit(function () {
         var statusMessage = $("#statusMessage").val();
-        console.log(statusMessage);
+        //console.log(statusMessage);
         
         // post to server
         $.ajax({
-            url: '/PortalFace/PostStatus/status',
+            url: 'PortalFace/PostStatus/status',
             type: 'POST',
             data: { status: statusMessage },
             success: function (response) {

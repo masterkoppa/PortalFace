@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcApplication1.Controllers
+namespace MvcApplication1
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace MvcApplication1.Controllers
         public int Id { get; set; }
         public string Symbol { get; set; }
         public int Amount { get; set; }
-        public Nullable<System.DateTime> DatePurchased { get; set; }
+        public decimal Price { get; set; }
         public int Owner { get; set; }
     }
 }
