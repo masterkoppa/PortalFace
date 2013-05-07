@@ -302,8 +302,30 @@ a {color: #3B5998;}
 
 /****** End Individual Widget Customization ******/
 
+/*** File upload customization ***/
 
 
+#photo_upload {  
+    text-align: center; 
+    line-height: 30px; 
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+    
+/*#link, #photo_upload {display: none}*/
+    
+.uploading #photo_upload {display: none}
+    
+.uploaded #photo_upload {display: none}
+    
+.uploading p {display: inline}
+    
+.uploaded #link {display: inline}
+
+#link, #replace {
+    text-decoration: none;
+}
 
 
 

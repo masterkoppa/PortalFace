@@ -8,6 +8,8 @@ using System.Web.Mvc;
 
 namespace MvcApplication1.Controllers
 {
+   
+
     public class PortalFaceController : Controller
     {
 
@@ -22,6 +24,9 @@ namespace MvcApplication1.Controllers
             //Start FB Connection
             if (Session["AccessToken"] != null)
             {
+               
+                
+
                 var accessToken = Session["AccessToken"].ToString();
                 try
                 {
@@ -58,6 +63,22 @@ namespace MvcApplication1.Controllers
             }
             return View();
         }
+
+        /*//imgur method
+        [HttpPost]
+        public ActionResult UploadImage(HttpPostedFileBase uploadFile)
+        {
+            if (uploadFile.ContentLength > 0)
+            {
+                var imgService = new ImgUrImageService();
+                byte[] fileBytes = new byte[uploadFile.InputStream.Length];
+                Int64 byteCount = uploadFile.InputStream.Read(fileBytes, 0, (int)uploadFile.InputStream.Length);
+                uploadFile.InputStream.Close();
+                string fileContent = Convert.ToBase64String(fileBytes, 0, fileBytes.Length);
+                var response = imgService.Upload(fileContent);
+            }
+            return View();
+        }*/
 
         //
         // GET: /PortalFace/Status

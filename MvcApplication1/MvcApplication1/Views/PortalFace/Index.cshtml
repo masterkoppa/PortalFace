@@ -30,11 +30,12 @@
                 //alert(JSON.stringify(response)); //DEBUG PURPOSES ONLY!
             });
         }
-        function addPhoto() {
-            var uid = FB.getUserID()
+        function addPhoto(imgURL) {
+            var uid = FB.getUserID();
+            console.log(uid);
             //var imgURL = "http://farm4.staticflickr.com/3332/3451193407_b7f047f4b4_o.jpg";//change with your external photo url
 
-            var imgURL = $("#photoURL").val();
+            //var imgURL = $("#photoURL").val();
 
             console.log(imgURL);
             FB.api('/'+uid+'/photos', 'post', {
@@ -43,6 +44,7 @@
             }, function (response) {
                 if (!response || response.error) {
                     alert('Error occured');
+                    console.log(response.error);
                 } else {
                     //alert('Post ID: ' + response.id);
                     $("#photoURL").val("");
@@ -76,6 +78,45 @@
         console.log(channel);
     </script> 
 
+<<<<<<< HEAD
+=======
+</script>
+
+<script type="text/javascript">
+
+    /* Drag'n drop stuff */
+    window.ondragover = function (e) { e.preventDefault() }
+    window.ondrop = function (e) { e.preventDefault(); upload(e.dataTransfer.files[0]); }
+    function upload(file) {
+
+        /* Is the file an image? */
+        if (!file || !file.type.match(/image.*/)) return;
+
+        /* It is! */
+        document.body.className = "uploading";
+
+        /* Lets build a FormData object*/
+        var fd = new FormData(); // I wrote about it: https://hacks.mozilla.org/2011/01/how-to-develop-a-html5-image-uploader/
+        fd.append("image", file); // Append the file
+        fd.append("key", "6528448c258cff474ca9701c5bab6927"); // Get your own key http://api.imgur.com/
+        var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
+        xhr.open("POST", "http://api.imgur.com/2/upload.json"); // Boooom!
+        xhr.onload = function () {
+            // Big win!
+            document.querySelector("#link");
+            addPhoto(JSON.parse(xhr.responseText).upload.links.imgur_page);
+           // console.log();
+            document.body.className = "uploaded";
+           
+        }
+        // Ok, I don't handle the errors. An exercice for the reader.
+
+        /* And now, we send the formdata */
+        xhr.send(fd);
+    }
+</script>
+    
+>>>>>>> Image Upload
     <div id="columns">
         <ul id="column1" class="column">
             <li class="widget color-red" >
@@ -83,7 +124,7 @@
                     <h3 class = "widget-titles" ><strong>Facebook Actions</strong></h3>
                 </div>
                 <div class="widget-content">
-                    <!-- <h3>Welcome back @ViewBag.Name</h3> -->
+                    <!-- <h3>Welcome back @ViewBag.Name <button onclick="document.querySelector('input').click()">Or click</button></h3> -->
                     <br />
                     <div id="fbactions">
                         <h4 class ="fb_Actions">Message Friends</h4>
@@ -91,10 +132,14 @@
                         <h4 class ="fb_Actions">Add Friends</h4>
                         <div><input type="text" placeholder="Friend's Facebook Id" id="friendUsername" /><button onclick="addFriend()">Add Friend</button></div>
                         <h4 class ="fb_Actions">Add Photo</h4>
-                        <div>
-                                 <input type="text" id="photoURL" />
-                                 <button onclick="addPhoto()">Add Photos</button>
+                        <div id="photo_upload">
+                            <p>
+                                <a id="link">Finished.</a>
+                                <a id="replace">Drop here.</a>
+                            
+                            <input type="file" onchange="upload(this.files[0])"></p>
                         </div>
+                        
                     </div>
                     <script>
                         $("#fbactions").accordion();
