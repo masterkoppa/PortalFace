@@ -160,11 +160,18 @@
                     <h3 class = "widget-titles"><strong>Global Chat</strong></h3>
                 </div>
                 <div class="widget-content">
+                    <div id="chat">
+                        Welcome to the chat!
+                    </div>
+                    <input type="text" id="chatMessages" />
                     <button id="chatSend">Send</button>
                     <script>
+                        var Message = $("#chatMessages").val();
                         $("#chatSend").click(function () {
                             console.log("Clicked me!");
-                            var trigered = channel.trigger('client-portalface-chat-messages', { message: "Test" });
+                            var trigered = channel.trigger('client-portalface-chat-messages', { message: Message });
+                            $("#chat").append(Message);
+                            $("#chatMessages").val('');
                             console.log(trigered);
                         });
                     </script>
